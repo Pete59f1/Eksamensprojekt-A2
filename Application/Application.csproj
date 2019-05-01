@@ -41,7 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddDBController.cs" />
+    <Compile Include="ChangeDBController.cs" />
+    <Compile Include="DBController.cs" />
+    <Compile Include="GetDBController.cs" />
+    <Compile Include="PictureRepo.cs" />
+    <Compile Include="PlantTypeRepo.cs" />
+    <Compile Include="ProductionRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repo.cs" />
+    <Compile Include="TrayRepo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{423a8dcf-c7eb-4d31-8228-34a26743d235}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
