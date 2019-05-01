@@ -33,5 +33,10 @@ namespace GUI
            
         }
 
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Visibility = Visibility.Visible;
+            this.Close();
+        }
     }
 }

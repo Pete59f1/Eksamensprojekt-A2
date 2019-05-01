@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         Closing="NewPictures_Closing"
-        Title="NewPictures" Height="450" Width="800">
+        Title="Nye Billeder" Height="450" Width="800"
+        ResizeMode="NoResize"
+        >
         
     <Grid>
         <Grid.RowDefinitions>
@@ -32,7 +34,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <TextBox Grid.Row="0"  Text="BLAAAAAA" Margin="10 10 10 10" BorderBrush="DarkBlue" BorderThickness="1.2" TextWrapping="Wrap" MaxLength="499"/>
-                <ComboBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100">
+                <ComboBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120">
                     <ComboBoxItem>Exeptional Vækst</ComboBoxItem>
                     <ComboBoxItem IsSelected="True">Normal Vækst</ComboBoxItem>
                     <ComboBoxItem>Lidt Vækst</ComboBoxItem>
@@ -47,9 +49,52 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0" Content="Slet Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23"/>
-                <Button Grid.Column="1" Content="Tilbage" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23"/>
+                <Button x:Name="btn_Back" Grid.Column="1" Content="Tilbage" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Click="Back_Click"/>
             </Grid>
         </Grid>
+        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1 1 0 1">
+            <ScrollViewer>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+
+                    </StackPanel>
+
+
+
+                </Grid>
+            </ScrollViewer>
+        </Border>
+        
         
         
        
