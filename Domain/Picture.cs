@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Picture
+    public class Picture
     {
        
 

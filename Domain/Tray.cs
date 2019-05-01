@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Tray
+    public class Tray
     {
 
         public int Traynumber { get; private set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class Production
+    public class Production
     {
         public int ProductionNUmber { get; private set; }
         public DateTime StartDate { get; private set; }
