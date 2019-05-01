@@ -7,7 +7,27 @@ using Domain;
 
 namespace Application
 {
-    class ChangeDBController
+    class ChangeDBController : DBController
     {
+        public void ChangePictureLink(string link)
+        {
+
+        }
+        public void ChangePictureStatus(PictureStatus pictureStatus)
+        {
+
+        }
+        public void ChangePictureComment(string comment)
+        {
+
+        }
+        public void ChangeProductionAssessment(string assessment)
+        {
+
+        }
+        public void ChangeTrayStatus(int trayNumber, bool isInUse)
+        {
+
+        }
     }
 }
