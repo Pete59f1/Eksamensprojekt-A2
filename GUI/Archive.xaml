@@ -1,0 +1,18 @@
+﻿<Window x:Class="GUI.Archive"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="Archive" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btn_Search" Content="Søg" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="666,306,0,0" Click="Btn_Search_Click"/>
+        <Button x:Name="btn_back"  Content="Tilbage" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="666,345,0,0" Click="Btn_back_Click"/>
+        <ComboBox x:Name="cbb_ProdNr" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="621,42,0,0" SelectionChanged="Cbb_ProdNr_SelectionChanged"/>
+        <ComboBox x:Name="cbb_PlantType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="621,156,0,0" SelectionChanged="Cbb_PlantType_SelectionChanged"/>
+        <Label Content="Produktions Nummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="621,11,0,0" Width="133"/>
+        <Label Content="Plante Sort" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="10.841,6.007" Margin="621,125,0,0" Width="120"/>
+
+    </Grid>
+</Window>
