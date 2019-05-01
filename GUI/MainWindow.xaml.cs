@@ -24,5 +24,30 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void NewPictures_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Hidden;
+            NewPictures newPictures = new NewPictures(this);
+            newPictures.Show();
+            
+        }
+        private void FindPictures_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("bla");
+        }
+        private void PictureArchive_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("bla");
+        }
+        private void EndProduction_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("bla");
+        }
+        private void TerminateProgram_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }

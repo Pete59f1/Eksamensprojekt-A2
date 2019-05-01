@@ -5,8 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="359.5" Width="186">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--Labels-->
+        <Label Grid.Row="0" Content="Nye Billeder" HorizontalAlignment="Center" />
+        <Label Grid.Row="2" Content="Find Billeder" HorizontalAlignment="Center" />
+        <Label Grid.Row="4" Content="Billede Arkiv" HorizontalAlignment="Center" />
+        <Label Grid.Row="6" Content="Afslut Produktion" HorizontalAlignment="Center" />
+        <Label Grid.Row="8" Content="Luk Program" HorizontalAlignment="Center" />
+        <Label Grid.Row="10" Content="Extra Knap" HorizontalAlignment="Center" />
+        <!--Buttons-->
+        <Button x:Name="btn_NewPictures" Grid.Row="1" Content="Klick" HorizontalAlignment="Center" Width="100" Click="NewPictures_Click"/>
+        <Button x:Name="btn_FindPicture" Grid.Row="3" Content="Klick" HorizontalAlignment="Center" Width="100" Click="FindPictures_Click"/>
+        <Button x:Name="btn_PictureArchive" Grid.Row="5" Content="Klick" HorizontalAlignment="Center" Width="100" Click="PictureArchive_Click"/>
+        <Button x:Name="btn_EndProduction" Grid.Row="7" Content="Klick" HorizontalAlignment="Center" Width="100" Click="EndProduction_Click" />
+        <Button x:Name="btn_TerminateProgram" Grid.Row="9" Content="Klick" HorizontalAlignment="Center" Width="100" Click="TerminateProgram_Click"/>
+        <Button Grid.Row="11" Content="Klick" HorizontalAlignment="Center" Width="100"/>
+        <!--Borders-->
+        <Border Grid.Row="0" BorderThickness="1 1 1 0" BorderBrush="Black" />
+        <Border Grid.Row="1" BorderThickness="1 0 1 1" BorderBrush="Black" />
+        <Border Grid.Row="2" BorderThickness="1 1 1 0" BorderBrush="Black" />
+        <Border Grid.Row="3" BorderThickness="1 0 1 1" BorderBrush="Black" />
+        <Border Grid.Row="4" BorderThickness="1 1 1 0" BorderBrush="Black" />
+        <Border Grid.Row="5" BorderThickness="1 0 1 1" BorderBrush="Black" />
+        <Border Grid.Row="6" BorderThickness="1 1 1 0" BorderBrush="Black" />
+        <Border Grid.Row="7" BorderThickness="1 0 1 1" BorderBrush="Black" />
+        <Border Grid.Row="8" BorderThickness="1 1 1 0" BorderBrush="Black" />
+        <Border Grid.Row="9" BorderThickness="1 0 1 1" BorderBrush="Black" />
+        <Border Grid.Row="10" BorderThickness="1 1 1 0" BorderBrush="Black" />
+        <Border Grid.Row="11" BorderThickness="1 0 1 1" BorderBrush="Black" />
     </Grid>
 </Window>
