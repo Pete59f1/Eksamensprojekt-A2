@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain;
+using GruppeA2.Domain;
 
-namespace Application
+namespace GruppeA2.Application
 {
     class PlantTypeRepo : Repo<PlantType>
     {
