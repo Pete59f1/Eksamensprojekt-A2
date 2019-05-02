@@ -46,7 +46,9 @@ namespace GUI
         }
         private void EndProduction_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("bla");
+            this.Visibility = Visibility.Hidden;
+            EndProcess endProcess = new EndProcess(this);
+            endProcess.Show();
         }
         private void TerminateProgram_Click(object sender, RoutedEventArgs e)
         {

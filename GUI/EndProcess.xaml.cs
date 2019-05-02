@@ -15,38 +15,31 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Interaction logic for FindPicture.xaml
+    /// Interaction logic for EndProcess.xaml
     /// </summary>
-    public partial class FindPicture : Window
+    public partial class EndProcess : Window
     {
         private MainWindow mainWindow;
-        public FindPicture(MainWindow mainWindow)
+        public EndProcess(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
-        private void FindPicture_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            mainWindow.Visibility = Visibility.Visible;
 
-        }
-
-        private void TrayNr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Btn_RemoveTray_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Back_Click(object sender, RoutedEventArgs e)
+        private void Btn_EndProduction_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_Back_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.Visibility = Visibility.Visible;
             this.Close();
-        }
-
-        private void Btn_ViewPicture_Click(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Hidden;
-            ViewPicture viewPicture = new ViewPicture(this);
-            viewPicture.Show();
         }
     }
 }
