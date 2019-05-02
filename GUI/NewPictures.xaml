@@ -52,6 +52,7 @@
                 <Button x:Name="btn_Back" Grid.Column="1" Content="Tilbage" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Click="Back_Click"/>
             </Grid>
         </Grid>
+        <!--Images-->
         <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1 1 0 1">
             <ScrollViewer>
                 <Grid>

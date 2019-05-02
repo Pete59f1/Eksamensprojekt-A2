@@ -19,16 +19,26 @@ namespace GUI
     /// </summary>
     public partial class FindPicture : Window
     {
-        public FindPicture()
+        private MainWindow mainWindow;
+        public FindPicture(MainWindow mainWindow)
         {
+            this.mainWindow = mainWindow;
             InitializeComponent();
         }
-
-        private void Btn_Back_Click(object sender, RoutedEventArgs e)
+        private void FindPicture_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.Show();
-            this.Close();
+            mainWindow.Visibility = Visibility.Visible;
+
+        }
+
+        private void TrayNr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

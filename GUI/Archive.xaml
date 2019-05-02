@@ -5,14 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Archive" Height="450" Width="800">
+        Title="Arkive" Height="450" Width="800" ResizeMode="NoResize"
+        Closing="Archive_Closing"
+        >
+   
+       
+
     <Grid>
-        <Button x:Name="btn_Search" Content="Søg" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="666,306,0,0" Click="Btn_Search_Click"/>
-        <Button x:Name="btn_back"  Content="Tilbage" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="666,345,0,0" Click="Btn_back_Click"/>
-        <ComboBox x:Name="cbb_ProdNr" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="621,42,0,0" SelectionChanged="Cbb_ProdNr_SelectionChanged"/>
-        <ComboBox x:Name="cbb_PlantType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="621,156,0,0" SelectionChanged="Cbb_PlantType_SelectionChanged"/>
-        <Label Content="Produktions Nummer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="621,11,0,0" Width="133"/>
-        <Label Content="Plante Sort" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="10.841,6.007" Margin="621,125,0,0" Width="120"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <!--Functions-->
+        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black"/>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="4" x:Name="btn_Search" Content="Søg" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75"  Click="Search_Click"/>
+            <Button Grid.Row="5" x:Name="btn_back"  Content="Tilbage" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75"  Click="Back_Click"/>
+            <ComboBox Grid.Row="1" x:Name="cbb_ProdNr" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="0 0 0 45" SelectionChanged="ProdNr_SelectionChanged"/>
+            <ComboBox Grid.Row="3" x:Name="cbb_PlantType" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="0 0 0 45"  SelectionChanged="PlantType_SelectionChanged"/>
+            <Label Grid.Row="0" Content="Produktions Nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="0 30 0 0" />
+            <Label Grid.Row="2" Content="Plante Sort" HorizontalAlignment="center" VerticalAlignment="center" Margin="0 30 0 0"  />
+        </Grid>
+        <!--Images-->
+        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1 1 0 1">
+            <ScrollViewer>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
+                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                        </Button>
+
+                    </StackPanel>
+
+
+
+                </Grid>
+            </ScrollViewer>
+        </Border>
+
+
+
 
     </Grid>
 </Window>

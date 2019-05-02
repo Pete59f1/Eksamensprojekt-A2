@@ -19,28 +19,36 @@ namespace GUI
     /// </summary>
     public partial class Archive : Window
     {
-        public Archive()
+        private MainWindow mainWindow;
+        public Archive(MainWindow mainWindow)
         {
+            this.mainWindow = mainWindow;
             InitializeComponent();
         }
 
-        private void Cbb_ProdNr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ProdNr_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void Cbb_PlantType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void PlantType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void Btn_Search_Click(object sender, RoutedEventArgs e)
+        private void Search_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Btn_back_Click(object sender, RoutedEventArgs e)
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
+            mainWindow.Visibility = Visibility.Visible;
+            this.Close();
+        }
+        private void Archive_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            mainWindow.Visibility = Visibility.Visible;
 
         }
     }
