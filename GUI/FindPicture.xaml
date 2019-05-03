@@ -48,7 +48,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0">
                         <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                            <Image Name="im_One" Source="/Domain;component/Images/01-05-2019.png"></Image>
                         </Button>
                         <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
                             <Image Source="/Domain;component/Images/01-05-2019.png"></Image>

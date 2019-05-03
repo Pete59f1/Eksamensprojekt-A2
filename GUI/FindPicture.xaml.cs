@@ -45,7 +45,7 @@ namespace GUI
         private void Btn_ViewPicture_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
-            ViewPicture viewPicture = new ViewPicture(this);
+            ViewPicture viewPicture = new ViewPicture(this, im_One);
             viewPicture.Show();
         }
     }

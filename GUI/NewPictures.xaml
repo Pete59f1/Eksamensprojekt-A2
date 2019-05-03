@@ -9,11 +9,11 @@
         Title="Nye Billeder" Height="450" Width="800"
         ResizeMode="NoResize"
         >
-        
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -41,15 +41,18 @@
                     <ComboBoxItem>Intet Vækst</ComboBoxItem>
                     <ComboBoxItem>Død</ComboBoxItem>
                 </ComboBox>
-                <Button Grid.Row="2" Content="Gem Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23"/>
+                <Button Grid.Row="2" Content="Gem Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Margin="75,10,75,37"/>
+                <Button Name="btn_ViewPicture" Content="Se billede" HorizontalAlignment="Left" Margin="75,38,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Click="Btn_ViewPicture_Click"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="94*"/>
+                    <ColumnDefinition Width="31*"/>
+                    <ColumnDefinition Width="36*"/>
+                    <ColumnDefinition Width="89*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Slet Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23"/>
-                <Button x:Name="btn_Back" Grid.Column="1" Content="Tilbage" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Click="Back_Click"/>
+                <Button Grid.Column="0" Content="Slet Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Grid.ColumnSpan="2" Margin="12,49,13,49"/>
+                <Button x:Name="btn_Back" Grid.Column="2" Content="Tilbage" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Click="Back_Click" Margin="13,49,12,49" Grid.ColumnSpan="2"/>
             </Grid>
         </Grid>
         <!--Images-->
@@ -65,7 +68,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0">
                         <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
+                            <Image Name="im_One" Source="/Domain;component/Images/01-05-2019.png"></Image>
                         </Button>
                         <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
                             <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
@@ -95,9 +98,9 @@
                 </Grid>
             </ScrollViewer>
         </Border>
-        
-        
-        
-       
+
+
+
+
     </Grid>
 </Window>
