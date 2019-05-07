@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GruppeA2.Application;
 
 namespace GUI
 {
@@ -20,8 +21,11 @@ namespace GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        internal Controller controller;
         public MainWindow()
         {
+            controller = new Controller();
+            DataContext = controller;
             InitializeComponent();
         }
 

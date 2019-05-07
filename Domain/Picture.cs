@@ -15,7 +15,7 @@ namespace GruppeA2.Domain
         public string Comment { get; private set; }
         public PictureStatus Status { get; private set; }
         public int Traynumber { get; private set; }
-        public string PictureLink { get; private set; }
+        public string PictureLink { get; private set; } = "/Domain;component/Images/01-05-2019.png";
 
         public Picture(DateTime name, string comment, PictureStatus status, int traynumber)
         {

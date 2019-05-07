@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AddDBController.cs" />
     <Compile Include="ChangeDBController.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="DBController.cs" />
     <Compile Include="GetDBController.cs" />
     <Compile Include="PictureRepo.cs" />

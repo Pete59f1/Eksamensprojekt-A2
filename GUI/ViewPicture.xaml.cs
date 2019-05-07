@@ -20,6 +20,7 @@ namespace GUI
     public partial class ViewPicture : Window
     {
         private Window previousWindow;
+
         public ViewPicture(Window previousWindow, Image choosenImage)
         {
             this.previousWindow = previousWindow;

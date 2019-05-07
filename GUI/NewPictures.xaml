@@ -59,42 +59,12 @@
         <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1 1 0 1">
             <ScrollViewer>
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0">
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Name="im_One" Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1">
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-
-                    </StackPanel>
-
-
-
+                    
+                    <WrapPanel x:Name="WP_mainWrapPanel" Orientation="Horizontal" VerticalAlignment="top" >
+                        
+                        
+                    </WrapPanel>
+                    
                 </Grid>
             </ScrollViewer>
         </Border>

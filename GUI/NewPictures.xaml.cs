@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GruppeA2.Application;
 
 namespace GUI
 {
@@ -22,9 +23,31 @@ namespace GUI
         private MainWindow mainWindow;
         public NewPictures(MainWindow mainWindow)
         {
+            
             this.mainWindow = mainWindow;
             InitializeComponent();
-            
+            UpdatePictures(mainWindow.controller.pictureRepo);
+        }
+        public void UpdatePictures(PictureRepo pictureRepo)
+        {
+            foreach (var picture in pictureRepo.RepoCollection)
+            {
+                
+                
+                
+                WP_mainWrapPanel.Children.Add(new Button
+                {
+                    Margin = new Thickness(2, 10, 2, 10),
+                    Height = 100,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Top,
+                    Content = new Image { Source = new BitmapImage(new Uri(picture.PictureLink, UriKind.Relative)) }
+                   
+                    
+                });
+                
+                
+            }
         }
 
         private void NewPictures_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -42,8 +65,7 @@ namespace GUI
         private void Btn_ViewPicture_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
-            ViewPicture viewPicture = new ViewPicture(this, im_One);
-            viewPicture.Show();
+            
         }
     }
 }

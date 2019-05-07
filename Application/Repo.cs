@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace GruppeA2.Application
 {
-    abstract class Repo<T>
+    public abstract class Repo<T>
     {
+        
         public List<T> RepoCollection { get; private set; }
-
+        public int Count { get => RepoCollection.Count; }
+        public Repo()
+        {
+            RepoCollection = new List<T>();
+        }
         public void AddItem(T number)
         {
             RepoCollection.Add(number);
