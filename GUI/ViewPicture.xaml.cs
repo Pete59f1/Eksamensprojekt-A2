@@ -20,12 +20,15 @@ namespace GUI
     public partial class ViewPicture : Window
     {
         private Window previousWindow;
+        public Image ChoosenImage { get; set; }
 
-        public ViewPicture(Window previousWindow, Image choosenImage)
+        public ViewPicture(Window previousWindow, object choosenImage)
         {
-            this.previousWindow = previousWindow;
-            im_PictureToBeShown.Source = choosenImage.Source;
             InitializeComponent();
+            ChoosenImage = choosenImage as Image;
+            this.previousWindow = previousWindow;
+            im_PictureToBeShown.Source = ChoosenImage.Source;
+            
         }
 
         private void Btn_Back_Click(object sender, RoutedEventArgs e)

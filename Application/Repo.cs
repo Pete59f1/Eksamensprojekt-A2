@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GruppeA2.Application
 {
-    public abstract class Repo<T>
+    public abstract class Repo<T> : INotifyPropertyChanged
     {
         
         public List<T> RepoCollection { get; private set; }
-        public int Count { get => RepoCollection.Count; }
+        public int Count { get
+            {
+                OnPropertyChanged(nameof(Count));
+                return RepoCollection.Count;
+            }
+
+        }
         public Repo()
         {
             RepoCollection = new List<T>();
@@ -34,6 +41,12 @@ namespace GruppeA2.Application
                 }
             }
             return item;
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

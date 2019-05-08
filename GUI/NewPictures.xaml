@@ -33,15 +33,15 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBox Grid.Row="0"  Text="BLAAAAAA" Margin="10 10 10 10" BorderBrush="DarkBlue" BorderThickness="1.2" TextWrapping="Wrap" MaxLength="499"/>
-                <ComboBox Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120">
+                <TextBox Grid.Row="0" x:Name="tb_Comment" Text="Write Comment Here" Margin="10 10 10 10" BorderBrush="DarkBlue" BorderThickness="1.2" TextWrapping="Wrap" MaxLength="499"/>
+                <ComboBox Grid.Row="1" x:Name="cb_Growth" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" SelectionChanged="Cb_Growth_SelectionChanged">
                     <ComboBoxItem>Exeptional Vækst</ComboBoxItem>
                     <ComboBoxItem IsSelected="True">Normal Vækst</ComboBoxItem>
                     <ComboBoxItem>Lidt Vækst</ComboBoxItem>
                     <ComboBoxItem>Intet Vækst</ComboBoxItem>
                     <ComboBoxItem>Død</ComboBoxItem>
                 </ComboBox>
-                <Button Grid.Row="2" Content="Gem Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Margin="75,10,75,37"/>
+                <Button Grid.Row="2" x:Name="btn_SavePicture" Content="Gem Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Margin="75,10,75,37" Click="Save_Click"/>
                 <Button Name="btn_ViewPicture" Content="Se billede" HorizontalAlignment="Left" Margin="75,38,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Click="Btn_ViewPicture_Click"/>
             </Grid>
             <Grid Grid.Row="1">
@@ -51,7 +51,7 @@
                     <ColumnDefinition Width="36*"/>
                     <ColumnDefinition Width="89*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="Slet Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Grid.ColumnSpan="2" Margin="12,49,13,49"/>
+                <Button Grid.Column="0" x:Name="btn_DeletePicture" Content="Slet Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Grid.ColumnSpan="2" Margin="12,49,13,49" Click="DeltePictre_Click" />
                 <Button x:Name="btn_Back" Grid.Column="2" Content="Tilbage" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Click="Back_Click" Margin="13,49,12,49" Grid.ColumnSpan="2"/>
             </Grid>
         </Grid>

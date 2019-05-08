@@ -41,14 +41,16 @@ namespace GruppeA2.Domain
             Name = name;
             Traynumber = traynumber;
         }
+        public void ChangePictureNumber(int number) => this.PictureNumber = number;
 
         public void ChangePictureLink(string link)
         {
             PictureLink = link;
         }
-        public void ChangePictureStatus(PictureStatus status)
+        public void ChangePictureStatus(int status)
         {
-            Status = status;
+             
+            Status = (PictureStatus)status;
         }
         public void ChangePictureComment( string comment)
         {

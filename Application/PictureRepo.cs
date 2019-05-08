@@ -14,9 +14,14 @@ namespace GruppeA2.Application
             
         }
         public string GetName(int index) => RepoCollection[index].Name.ToString();
-        public string GetStatus(int index) => RepoCollection[index].Status.ToString();
+        public int GetStatus(int index) => Convert.ToInt32(RepoCollection[index].Status);
         public string GetComment(int index) => RepoCollection[index].Comment;
         public int GetTrayNumber(int index) => RepoCollection[index].Traynumber;
         public string GetPictureLink(int index) => RepoCollection[index].PictureLink;
+
+        public void DeletePicture(int checkedIndex)
+        {
+            RepoCollection[checkedIndex] = null;
+        }
     }
 }

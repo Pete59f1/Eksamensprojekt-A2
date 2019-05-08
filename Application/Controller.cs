@@ -11,20 +11,23 @@ namespace GruppeA2.Application
     {
         // Test til UI
         public PictureRepo pictureRepo;
+        public PictureRepo noCommentOrStatusPictureRepo;
         public Controller()
         {
-            pictureRepo = new PictureRepo();
+            noCommentOrStatusPictureRepo = new PictureRepo();
+
             Picture pic = new Picture(DateTime.Now, 1);
-   
-            pictureRepo = new PictureRepo();
+            pic.ChangePictureNumber(0);
+            pic.ChangePictureStatus(4);
             Picture pic1 = new Picture(DateTime.Now, 1);
-
-            pictureRepo = new PictureRepo();
+            pic1.ChangePictureNumber(1);
+            pic1.ChangePictureStatus(0);
             Picture pic2 = new Picture(DateTime.Now, 1);
-
-            pictureRepo.AddItem(pic);
-            pictureRepo.AddItem(pic1);
-            pictureRepo.AddItem(pic2);
+            pic2.ChangePictureNumber(2);
+            pic2.ChangePictureStatus(1);
+            noCommentOrStatusPictureRepo.AddItem(pic);
+            noCommentOrStatusPictureRepo.AddItem(pic1);
+            noCommentOrStatusPictureRepo.AddItem(pic2);
 
 
         }
