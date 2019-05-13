@@ -22,7 +22,7 @@ namespace GUI
     {
         private MainWindow mainWindow;
         private int CheckedIndex { get; set; }
-        public RadioButton CheckedRadioButton { get; set; }
+        private RadioButton CheckedRadioButton { get; set; }
         public NewPictures(MainWindow mainWindow)
         {
             
