@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace GruppeA2.Application
 {
-    public abstract class Repo<T> : INotifyPropertyChanged
+    public abstract class Repo<T> 
     {
         
         public List<T> RepoCollection { get; private set; }
         public int Count { get
             {
-                OnPropertyChanged(nameof(Count));
+                
                 return RepoCollection.Count;
             }
 
@@ -42,11 +42,8 @@ namespace GruppeA2.Application
             }
             return item;
         }
-        public event PropertyChangedEventHandler PropertyChanged;
+        
 
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+       
     }
 }

@@ -10,15 +10,18 @@ namespace GruppeA2.Application
     public class Controller
     {
         // Test til UI
-        public PictureRepo pictureRepo;
+        public PictureRepo notActivePictureRepo;
+        public PictureRepo activePictureRepo;
         public PictureRepo noCommentOrStatusPictureRepo;
         public Controller()
         {
             noCommentOrStatusPictureRepo = new PictureRepo();
+            notActivePictureRepo = new PictureRepo();
 
             Picture pic = new Picture(DateTime.Now, 1);
             pic.ChangePictureNumber(0);
             pic.ChangePictureStatus(4);
+            pic.ChangePictureComment("Sejt");
             Picture pic1 = new Picture(DateTime.Now, 1);
             pic1.ChangePictureNumber(1);
             pic1.ChangePictureStatus(0);
@@ -28,6 +31,9 @@ namespace GruppeA2.Application
             noCommentOrStatusPictureRepo.AddItem(pic);
             noCommentOrStatusPictureRepo.AddItem(pic1);
             noCommentOrStatusPictureRepo.AddItem(pic2);
+
+            
+         
 
 
         }

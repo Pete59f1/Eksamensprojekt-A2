@@ -22,7 +22,7 @@ namespace GUI
     {
         private MainWindow mainWindow;
         private int CheckedIndex { get; set; }
-        public RadioButton CheckedRadioButton { get; set; }
+        private RadioButton CheckedRadioButton { get; set; }
         public NewPictures(MainWindow mainWindow)
         {
             
@@ -32,7 +32,7 @@ namespace GUI
         }
         public void UpdatePictures(PictureRepo noCommentOrStatusPictureRepo)
         {
-            foreach (var picture in noCommentOrStatusPictureRepo.RepoCollection)
+            foreach (GruppeA2.Domain.Picture picture in noCommentOrStatusPictureRepo.RepoCollection)
             {
 
 

@@ -14,6 +14,7 @@ namespace GruppeA2.Domain
         public DateTime ExpectedEndDate { get; private set; }
         public bool IsInProduction { get; private set; }
         public DateTime EndDate { get; private set; }
+        public List<Picture> PicturesInTray { get; private set; }
 
         public Tray(int traynumber, PlantType plantType, DateTime expectedEndDate, bool isInProduction)
         {
@@ -21,6 +22,35 @@ namespace GruppeA2.Domain
             PlantType = plantType;
             ExpectedEndDate = expectedEndDate;
             IsInProduction = isInProduction;
+        }
+
+        public void AddPicture(Picture picture)
+        {
+            PicturesInTray.Add(picture);
+        }
+        public void RemovePicture(int pictureNumber)
+        {
+            foreach (Picture item in PicturesInTray)
+            {
+                if (item.PictureNumber == pictureNumber)
+                {
+                    PicturesInTray.Remove(item);
+                }
+            }
+        }
+        public Picture GetPicture(int pictureNumber)
+        {
+            Picture picture = null;
+            foreach (Picture item in PicturesInTray)
+            {
+                if (item.PictureNumber == pictureNumber)
+                {
+                    picture = item;
+                    return picture;
+                }
+
+            }
+            return picture;
         }
         public void ChangePlantType(PlantType planttype)
         {
