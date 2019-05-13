@@ -19,6 +19,7 @@ namespace GruppeA2.Application
             Picture pic = new Picture(DateTime.Now, 1);
             pic.ChangePictureNumber(0);
             pic.ChangePictureStatus(4);
+            pic.ChangePictureLink("/Domain;component/Images/04-05-2019.jpg");
             Picture pic1 = new Picture(DateTime.Now, 1);
             pic1.ChangePictureNumber(1);
             pic1.ChangePictureStatus(0);
