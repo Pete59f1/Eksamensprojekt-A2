@@ -32,7 +32,7 @@ namespace GUI
         }
         public void UpdatePictures(PictureRepo notActivePictureRepo)
         {
-            foreach (var picture in notActivePictureRepo.RepoCollection)
+            foreach (GruppeA2.Domain.Picture picture in notActivePictureRepo.RepoCollection)
             {
 
 

@@ -33,19 +33,7 @@ namespace GruppeA2.Application
             noCommentOrStatusPictureRepo.AddItem(pic2);
 
             
-            pic.ChangePictureNumber(3);
-            pic.ChangePictureStatus(3);
-            pic.ChangePictureComment("cool");
-            
-            pic1.ChangePictureNumber(6);
-            pic1.ChangePictureStatus(2);
-            pic1.ChangePictureComment("much cool");
-
-            pic2.ChangePictureNumber(8);
-            pic2.ChangePictureStatus(2);
-            notActivePictureRepo.AddItem(pic);
-            notActivePictureRepo.AddItem(pic1);
-            notActivePictureRepo.AddItem(pic2);
+         
 
 
         }
