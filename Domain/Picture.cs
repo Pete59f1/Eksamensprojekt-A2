@@ -17,12 +17,13 @@ namespace GruppeA2.Domain
         public int Traynumber { get; private set; }
         public string PictureLink { get; private set; } = "/Domain;component/Images/01-05-2019.png";
 
-        public Picture(DateTime name, string comment, PictureStatus status, int traynumber)
+        public Picture(int pictureNumber, DateTime name, string comment, string status, string pictureLink)
         {
+            PictureNumber = pictureNumber;
             Name = name;
             Comment = comment;
-            Status = status;
-            Traynumber = traynumber;
+            Status = FindStatus(status);
+            PictureLink = pictureLink;
         }
         public Picture(DateTime name, PictureStatus status, int traynumber)
         {
@@ -55,6 +56,11 @@ namespace GruppeA2.Domain
         public void ChangePictureComment(string comment)
         {
             Comment = comment;
+        }
+        public PictureStatus FindStatus(string status)
+        {
+            PictureStatus stat = (PictureStatus)Enum.Parse(typeof(PictureStatus), status);
+            return stat;
         }
         
     }
