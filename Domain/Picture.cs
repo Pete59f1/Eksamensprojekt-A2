@@ -52,7 +52,7 @@ namespace GruppeA2.Domain
              
             Status = (PictureStatus)status;
         }
-        public void ChangePictureComment( string comment)
+        public void ChangePictureComment(string comment)
         {
             Comment = comment;
         }
