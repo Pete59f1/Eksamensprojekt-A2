@@ -41,5 +41,19 @@ namespace GruppeA2.Application
         {
 
         }
+        public bool IsBatchActive()
+        {
+            DateTime now = new DateTime();
+            DateTime start = ;
+            DateTime slut = ;
+            if (now > start && now < slut)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
