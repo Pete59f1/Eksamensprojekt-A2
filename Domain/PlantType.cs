@@ -8,17 +8,25 @@ namespace GruppeA2.Domain
 {
     public class PlantType
     {
+       
 
         public int PlantNumber { get; private set; }
         public string Type { get; private set; }
-        public int ExpectedGrowthTimeInDays { get; private set; }
+        public int PhaseOne { get; private set; }
+        public int PhaseTwo { get; private set; }
+        public int PhaseThree { get; private set; }
+        public int PhaseFour { get; private set; }
 
-        public PlantType(string type, int expectedGrowthTimeInDays, int plantNumber)
+        public PlantType(int plantNumber, string type, int phaseOne, int phaseTwo, int phaseThree, int phaseFour)
         {
-            Type = type;
-            ExpectedGrowthTimeInDays = expectedGrowthTimeInDays;
             PlantNumber = plantNumber;
+            Type = type;
+            PhaseOne = phaseOne;
+            PhaseTwo = phaseTwo;
+            PhaseThree = phaseThree;
+            PhaseFour = phaseFour;
         }
+
 
 
     }

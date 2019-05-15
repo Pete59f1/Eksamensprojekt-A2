@@ -7,7 +7,7 @@ using GruppeA2.Domain;
 
 namespace GruppeA2.Application
 {
-    class ProductionRepo : Repo<Production>
+    class BatchRepo : Repo<Batch>
     {
     }
 }

@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace GruppeA2.Domain
 {
-    public class Production
+    public class Batch
     {
-        public int ProductionNUmber { get; private set; }
-        public DateTime StartDate { get; private set; }
-        public DateTime ExpectedEndDate { get; private set; }
-        public DateTime EndDate { get; private set; }
-        public string Assessment { get; private set; }
-        public bool IsProductionDone { get; private set; }
-        public List<Tray> TraysInProduction { get; private set; }
+       
 
-        public Production(DateTime startDate, DateTime expectedEndDate, DateTime endDate, string assessment, bool isProductionDone)
+        public int ProductionNUmber { get; private set; }
+        public int Phase { get; private set; }
+        public DateTime StartDate { get; private set; }
+        public DateTime EndDate { get; private set; }
+        public List<Tray> TraysInProduction { get; private set; }
+        public Batch(int productionNUmber, int phase, DateTime startDate, DateTime endDate)
         {
+            ProductionNUmber = productionNUmber;
+            Phase = phase;
             StartDate = startDate;
-            ExpectedEndDate = expectedEndDate;
             EndDate = endDate;
-            Assessment = assessment;
-            IsProductionDone = isProductionDone;
         }
+
         public void AddTray(Tray tray)
         {
             TraysInProduction.Add(tray);
@@ -52,14 +51,6 @@ namespace GruppeA2.Domain
             }
             return tray;
         }
-        public void ChangeAssessment(string assessment)
-        {
-            Assessment = assessment;
-        }
-        public void EndProduction(DateTime endDate)
-        {
-            EndDate = endDate;
-            IsProductionDone = true;
-        }
+
     }
 }

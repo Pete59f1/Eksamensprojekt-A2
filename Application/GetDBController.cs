@@ -19,7 +19,7 @@ namespace GruppeA2.Application
         {
             return null;
         }
-        public Production GetMostRecentProduction()
+        public Batch GetMostRecentProduction()
         {
             return null;
         }
@@ -27,7 +27,7 @@ namespace GruppeA2.Application
         {
             return null;
         }
-        public Production GetSpecificProduction(int productionNumber)
+        public Batch GetSpecificProduction(int productionNumber)
         {
             return null;
         }

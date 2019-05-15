@@ -8,7 +8,7 @@ namespace GruppeA2.Domain
 {
     public enum PictureStatus
     {
-        ExpectionalGrowth,
+        ExceptionalGrowth,
         NormalGrowth,
         SomeGrowth,
         NoGrowth,

@@ -41,10 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="PictureStatus.cs" />
     <Compile Include="PlantType.cs" />
-    <Compile Include="Production.cs" />
+    <Compile Include="Batch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tray.cs" />
   </ItemGroup>

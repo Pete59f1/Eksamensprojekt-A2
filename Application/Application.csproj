@@ -46,12 +46,10 @@
     <Compile Include="Controller.cs" />
     <Compile Include="DBController.cs" />
     <Compile Include="GetDBController.cs" />
-    <Compile Include="PictureRepo.cs" />
     <Compile Include="PlantTypeRepo.cs" />
-    <Compile Include="ProductionRepo.cs" />
+    <Compile Include="BatchRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo.cs" />
-    <Compile Include="TrayRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">

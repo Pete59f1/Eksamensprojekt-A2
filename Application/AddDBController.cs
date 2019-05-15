@@ -25,7 +25,7 @@ namespace GruppeA2.Application
         {
 
         }
-        public void AddProduction(Production production)
+        public void AddProduction(Batch production)
         {
 
         }
