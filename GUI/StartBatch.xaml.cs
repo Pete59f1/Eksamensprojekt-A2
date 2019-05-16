@@ -25,5 +25,11 @@ namespace GUI
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
+
+        private void Btn_Back_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Visibility = Visibility.Visible;
+            this.Close();
+        }
     }
 }
