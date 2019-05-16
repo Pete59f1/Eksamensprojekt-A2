@@ -8,7 +8,6 @@ namespace GruppeA2.Domain
 {
     public class PlantType
     {
-       
 
         public int PlantNumber { get; private set; }
         public string Type { get; private set; }

@@ -8,7 +8,6 @@ namespace GruppeA2.Domain
 {
     public class Picture
     {
-       
 
         public int PictureNumber { get; private set; }
         public DateTime Name { get; private set; }

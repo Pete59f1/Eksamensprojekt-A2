@@ -8,7 +8,6 @@ namespace GruppeA2.Domain
 {
     public class Batch
     {
-       
 
         public int ProductionNUmber { get; private set; }
         public int Phase { get; private set; }

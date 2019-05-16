@@ -8,8 +8,6 @@ namespace GruppeA2.Domain
 {
     public class Day
     {
-   
-
         public int DayNr { get; private set; }
         public DateTime Date { get; private set; }
 
