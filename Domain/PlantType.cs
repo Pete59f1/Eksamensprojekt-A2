@@ -11,12 +11,12 @@ namespace GruppeA2.Domain
 
         public int PlantNumber { get; private set; }
         public string Type { get; private set; }
-        public int PhaseOne { get; private set; }
-        public int PhaseTwo { get; private set; }
-        public int PhaseThree { get; private set; }
-        public int PhaseFour { get; private set; }
+        public string PhaseOne { get; private set; }
+        public string PhaseTwo { get; private set; }
+        public string PhaseThree { get; private set; }
+        public string PhaseFour { get; private set; }
 
-        public PlantType(int plantNumber, string type, int phaseOne, int phaseTwo, int phaseThree, int phaseFour)
+        public PlantType(int plantNumber, string type, string phaseOne, string phaseTwo, string phaseThree, string phaseFour)
         {
             PlantNumber = plantNumber;
             Type = type;
@@ -25,8 +25,5 @@ namespace GruppeA2.Domain
             PhaseThree = phaseThree;
             PhaseFour = phaseFour;
         }
-
-
-
     }
 }

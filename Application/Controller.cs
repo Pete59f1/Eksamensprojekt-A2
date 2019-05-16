@@ -9,6 +9,7 @@ namespace GruppeA2.Application
 {
     public class Controller
     {
+        private GetDBController GDBC = new GetDBController();
         // Test til UI
         //public PictureRepo notActivePictureRepo;
         //public PictureRepo activePictureRepo;
@@ -35,6 +36,11 @@ namespace GruppeA2.Application
         public void UpdatePictures()
         {
 
+        }
+
+        public PlantTypeRepo GetAllPlantType()
+        {
+            return GDBC.GetAllPlantType();
         }
     }
 }

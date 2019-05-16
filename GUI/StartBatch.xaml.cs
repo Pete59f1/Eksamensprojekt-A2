@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GruppeA2.Application;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace GUI
     /// </summary>
     public partial class StartBatch : Window
     {
+        private Controller con;
         private MainWindow mainWindow;
         public StartBatch(MainWindow mainWindow)
         {
+            con = new Controller();
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
@@ -30,6 +33,12 @@ namespace GUI
         {
             mainWindow.Visibility = Visibility.Visible;
             this.Close();
+        }
+
+        private void Btn_Test_Click(object sender, RoutedEventArgs e)
+        {
+            PlantTypeRepo pl = con.GetAllPlantType();
+
         }
     }
 }

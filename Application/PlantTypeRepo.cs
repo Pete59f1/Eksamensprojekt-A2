@@ -7,7 +7,7 @@ using GruppeA2.Domain;
 
 namespace GruppeA2.Application
 {
-    class PlantTypeRepo : Repo<PlantType>
+    public class PlantTypeRepo : Repo<PlantType>
     {
     }
 }
