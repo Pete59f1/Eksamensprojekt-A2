@@ -28,39 +28,39 @@ namespace GUI
             
             this.mainWindow = mainWindow;
             InitializeComponent();
-            UpdatePictures(mainWindow.controller.noCommentOrStatusPictureRepo);
+            //UpdatePictures(mainWindow.controller.noCommentOrStatusPictureRepo);
         }
-        public void UpdatePictures(PictureRepo noCommentOrStatusPictureRepo)
-        {
-            foreach (GruppeA2.Domain.Picture picture in noCommentOrStatusPictureRepo.RepoCollection)
-            {
+        //public void UpdatePictures(PictureRepo noCommentOrStatusPictureRepo)
+        //{
+        //    foreach (GruppeA2.Domain.Picture picture in noCommentOrStatusPictureRepo.RepoCollection)
+        //    {
 
 
-                RadioButton radioBtn = new RadioButton
-                {
-                    Margin = new Thickness(2, 10, 2, 10),
-                    Height = 100,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Content = new Image { Source = new BitmapImage(new Uri(picture.PictureLink, UriKind.Relative)) },
-                    Name = "_" + picture.PictureNumber.ToString(),
+        //        RadioButton radioBtn = new RadioButton
+        //        {
+        //            Margin = new Thickness(2, 10, 2, 10),
+        //            Height = 100,
+        //            HorizontalAlignment = HorizontalAlignment.Center,
+        //            VerticalAlignment = VerticalAlignment.Top,
+        //            Content = new Image { Source = new BitmapImage(new Uri(picture.PictureLink, UriKind.Relative)) },
+        //            Name = "_" + picture.PictureNumber.ToString(),
                     
                     
                     
-                };
-                radioBtn.Checked += this.Radio_Checked;
-                WP_mainWrapPanel.Children.Add(radioBtn);
+        //        };
+        //        radioBtn.Checked += this.Radio_Checked;
+        //        WP_mainWrapPanel.Children.Add(radioBtn);
                 
                 
-            }
-        }
-        private void Radio_Checked(object sender, EventArgs e)
-        {
-            CheckedRadioButton = sender as RadioButton;
-            CheckedIndex = Convert.ToInt32(CheckedRadioButton.Name.Substring(1));
-            tb_Comment.Text = mainWindow.controller.noCommentOrStatusPictureRepo.GetComment(CheckedIndex);
-            cb_Growth.SelectedIndex = mainWindow.controller.noCommentOrStatusPictureRepo.GetStatus(CheckedIndex);
-        }
+        //    }
+        //}
+        //private void Radio_Checked(object sender, EventArgs e)
+        //{
+        //    CheckedRadioButton = sender as RadioButton;
+        //    CheckedIndex = Convert.ToInt32(CheckedRadioButton.Name.Substring(1));
+        //    tb_Comment.Text = mainWindow.controller.noCommentOrStatusPictureRepo.GetComment(CheckedIndex);
+        //    cb_Growth.SelectedIndex = mainWindow.controller.noCommentOrStatusPictureRepo.GetStatus(CheckedIndex);
+        //}
 
 
         private void NewPictures_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -90,18 +90,17 @@ namespace GUI
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (mainWindow.controller.noCommentOrStatusPictureRepo.RepoCollection[CheckedIndex] != null)
-            {
-                mainWindow.controller.noCommentOrStatusPictureRepo.RepoCollection[CheckedIndex].ChangePictureComment(tb_Comment.Text);
-                mainWindow.controller.noCommentOrStatusPictureRepo.RepoCollection[CheckedIndex].ChangePictureStatus(cb_Growth.SelectedIndex);
-            }
-
+            //if (mainWindow.controller.noCommentOrStatusPictureRepo.RepoCollection[CheckedIndex] != null)
+            //{
+            //    mainWindow.controller.noCommentOrStatusPictureRepo.RepoCollection[CheckedIndex].ChangePictureComment(tb_Comment.Text);
+            //    mainWindow.controller.noCommentOrStatusPictureRepo.RepoCollection[CheckedIndex].ChangePictureStatus(cb_Growth.SelectedIndex);
+            //}
         }
 
         private void DeltePictre_Click(object sender, RoutedEventArgs e)
         {
-            WP_mainWrapPanel.Children.Remove(CheckedRadioButton);
-            mainWindow.controller.noCommentOrStatusPictureRepo.DeletePicture(CheckedIndex);
+            //WP_mainWrapPanel.Children.Remove(CheckedRadioButton);
+            //mainWindow.controller.noCommentOrStatusPictureRepo.DeletePicture(CheckedIndex);
         }
     }
 }

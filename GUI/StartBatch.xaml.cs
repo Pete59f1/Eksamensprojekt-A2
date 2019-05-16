@@ -15,31 +15,15 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Interaction logic for EndProcess.xaml
+    /// Interaction logic for StartBatch.xaml
     /// </summary>
-    public partial class EndProcess : Window
+    public partial class StartBatch : Window
     {
         private MainWindow mainWindow;
-        public EndProcess(MainWindow mainWindow)
+        public StartBatch(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
-        }
-
-        private void Btn_RemoveTray_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Btn_EndProduction_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Btn_Back_Click(object sender, RoutedEventArgs e)
-        {
-            mainWindow.Visibility = Visibility.Visible;
-            this.Close();
         }
     }
 }

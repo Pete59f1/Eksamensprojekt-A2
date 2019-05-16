@@ -13,10 +13,6 @@ namespace GruppeA2.Application
         {
 
         }
-        public void AddPictureRepo(PictureRepo pictures)
-        {
-
-        }
         public void AddPlantType(PlantType plantType)
         {
 
@@ -26,10 +22,6 @@ namespace GruppeA2.Application
 
         }
         public void AddProduction(Batch production)
-        {
-
-        }
-        public void AddProductionRepe(ProductionRepo productions)
         {
 
         }

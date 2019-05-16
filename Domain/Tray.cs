@@ -8,7 +8,6 @@ namespace GruppeA2.Domain
 {
     public class Tray
     {
-      
 
         public int Traynumber { get; private set; }
 
@@ -17,8 +16,5 @@ namespace GruppeA2.Domain
         {
             Traynumber = traynumber;
         }
-
-       
-
     }
 }
