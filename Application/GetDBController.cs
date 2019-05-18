@@ -15,50 +15,51 @@ namespace GruppeA2.Application
         public PlantTypeRepo GetAllPlantType()
         {
             PlantTypeRepo savedPlantRepo = new PlantTypeRepo();
-            using (SqlConnection con = new SqlConnection(ConnectionString))
-            {
-                try
-                {
-                    con.Open();
+            //using (SqlConnection con = new SqlConnection(ConnectionString))
+            //{
+            //    try
+            //    {
+            //        con.Open();
 
-                    SqlCommand cmd = new SqlCommand("sp_GetPlantType", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
+            //        SqlCommand cmd = new SqlCommand("sp_GetPlantType", con);
+            //        cmd.CommandType = CommandType.StoredProcedure;
 
-                    SqlDataReader read = cmd.ExecuteReader();
+            //        SqlDataReader read = cmd.ExecuteReader();
 
-                    if (read.HasRows)
-                    {
-                        while (read.Read())
-                        {
-                            string plantNr = read["PlantId"].ToString();
-                            int plantNumber = int.Parse(plantNr);
-                            string plantType = read["Type"].ToString();
-                            string phase1 = read["Phase_1"].ToString();
-                            string phase2 = read["Phase_2"].ToString();
-                            string phase3 = read["Phase_3"].ToString();
-                            string phase4 = read["Phase_4"].ToString();
-                            
-                            PlantType plants = new PlantType(plantNumber, plantType, phase1, phase2, phase3, phase4);
-                            savedPlantRepo.AddItem(plants);
-                        }
-                    }
-                    return savedPlantRepo;
-                }
-                catch (SqlException ex)
-                {
-                    throw new Exception(ex.Message);
-                }
-            }
+            //        if (read.HasRows)
+            //        {
+            //            while (read.Read())
+            //            {
+            //                string plantNr = read["PlantId"].ToString();
+            //                int plantNumber = int.Parse(plantNr);
+            //                string plantType = read["Type"].ToString();
+            //                string phase1 = read["Phase_1"].ToString();
+            //                string phase2 = read["Phase_2"].ToString();
+            //                string phase3 = read["Phase_3"].ToString();
+            //                string phase4 = read["Phase_4"].ToString();
+
+            //                PlantType plants = new PlantType(plantNumber, plantType, phase1, phase2, phase3, phase4);
+            //                savedPlantRepo.AddItem(plants);
+            //            }
+            //        }
+            //        return savedPlantRepo;
+            //    }
+            //    catch (SqlException ex)
+            //    {
+            //        throw new Exception(ex.Message);
+            //    }
+            //}
+
+            //Lavet test data for at arbejde videre
+            PlantType plant1 = new PlantType(1, "Rose (Rød)", "14", "20", "30", "25");
+            PlantType plant2 = new PlantType(2, "Rose (Blå)", "15", "21", "31", "26");
+            PlantType plant3 = new PlantType(3, "Rose (Gul)", "16", "22", "32", "27");
+            savedPlantRepo.AddItem(plant1);
+            savedPlantRepo.AddItem(plant2);
+            savedPlantRepo.AddItem(plant3);
+            return savedPlantRepo;
         }
-
-        public Batch GetMostRecentProduction()
-        {
-            return null;
-        }
-        public Batch GetSpecificProduction(int productionNumber)
-        {
-            return null;
-        }
+        
         //public PictureRepo GetPictures()
         //{
         //    PictureRepo savedPictureRepo = new PictureRepo();

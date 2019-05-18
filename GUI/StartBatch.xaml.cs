@@ -27,18 +27,14 @@ namespace GUI
             con = new Controller();
             this.mainWindow = mainWindow;
             InitializeComponent();
+            PlantTypeRepo plants = con.GetAllPlantType();
+            cb_PlantType.Items.Add(plants.GetItem(0).ToString());
         }
 
         private void Btn_Back_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.Visibility = Visibility.Visible;
             this.Close();
-        }
-
-        private void Btn_Test_Click(object sender, RoutedEventArgs e)
-        {
-            PlantTypeRepo pl = con.GetAllPlantType();
-
         }
     }
 }
