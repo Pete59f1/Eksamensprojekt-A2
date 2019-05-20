@@ -44,6 +44,8 @@ namespace GUI
         private void Cb_PlantType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             cb_Phase.Items.Clear();
+            cb_Phase.SelectedIndex = -1;
+            
             string chosen_type = cb_PlantType.SelectedItem.ToString();
 
             for (int i = 0; i < plants.Count; i++)
@@ -55,6 +57,24 @@ namespace GUI
                     cb_Phase.Items.Add("Fase 4: " + plants.get_plant_phaseFour(plants.GetItem(i)) + " dage");
                 }
             }
+
+        }
+
+        private void Cb_Phase_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cb_Phase.SelectedIndex >= 0)
+            {
+                string phase = cb_Phase.SelectedItem.ToString();
+                phase = phase.Substring(8, 2);
+                lbl_days.Content = "Fase: " + phase;
+                lbl_start_date.Content = "start dato: " + DateTime.Now.ToString("dd/MM/yyyy");
+                lbl_end_date.Content = "slut dato: " + DateTime.Now.Date.AddDays(int.Parse(phase)).ToString("dd/MM/yyyy");
+            }
+        }
+
+        private void Btn_start_batch_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

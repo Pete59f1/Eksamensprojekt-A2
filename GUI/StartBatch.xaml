@@ -8,8 +8,14 @@
         Title="StartBatch" Height="450" Width="800">
     <Grid>
         <Button Name="btn_Back" Content="Tilbage" HorizontalAlignment="Left" Margin="674,369,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Back_Click"/>
-        <ComboBox Name="cb_PlantType" HorizontalAlignment="Left" Margin="130,63,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Cb_PlantType_SelectionChanged"/>
-        <ComboBox Name="cb_Phase" HorizontalAlignment="Left" Margin="130,130,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="cb_PlantType" HorizontalAlignment="Left" Margin="130,63,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Cb_PlantType_SelectionChanged">
+            
+        </ComboBox>
+        <ComboBox Name="cb_Phase" HorizontalAlignment="Left" Margin="130,130,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Cb_Phase_SelectionChanged"/>
+        <Button Name="btn_start_batch" Content="" HorizontalAlignment="Left" Margin="473,298,0,0" VerticalAlignment="Top" Width="142" Height="91" Click="Btn_start_batch_Click"/>
+        <Label Name="lbl_days" Content="" HorizontalAlignment="Left" Margin="324,59,0,0" VerticalAlignment="Top" Width="164"/>
+        <Label Name="lbl_start_date" Content="" HorizontalAlignment="Left" Margin="324,102,0,0" VerticalAlignment="Top" Width="164"/>
+        <Label Name="lbl_end_date" Content="" HorizontalAlignment="Left" Margin="324,134,0,0" VerticalAlignment="Top" Width="164"/>
 
     </Grid>
 </Window>
