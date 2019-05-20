@@ -74,7 +74,13 @@ namespace GUI
 
         private void Btn_start_batch_Click(object sender, RoutedEventArgs e)
         {
+            string phase = cb_Phase.SelectedItem.ToString();
+            int fase = int.Parse(phase);
+            DateTime start = DateTime.Now;
+            DateTime end = DateTime.Now.Date.AddDays(int.Parse(phase));
+            int id = plants.get_plant_number(plants.GetItem)
 
+            con.new_batch()
         }
     }
 }

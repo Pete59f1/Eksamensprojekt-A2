@@ -9,14 +9,12 @@ namespace GruppeA2.Application
 {
     public class Controller
     {
+        private AddDBController ADBC = new AddDBController();
         private GetDBController GDBC = new GetDBController();
         public Batch activeBatch = new Batch(1,1,new DateTime(2019,05,20),new DateTime(2019,05,23));
 
         public Controller()
         {
-           
-
-
             Picture pic = new Picture(DateTime.Now, 1);
             pic.ChangePictureNumber(0);
             pic.ChangePictureStatus(4);
@@ -49,6 +47,9 @@ namespace GruppeA2.Application
         {
             return GDBC.GetAllPlantType();
         }
-
+        public void new_batch(int phase, DateTime start_date, DateTime end_date, int plantId)
+        {
+            ADBC.new_batch(phase, start_date, end_date, plantId);
+        }
     }
 }
