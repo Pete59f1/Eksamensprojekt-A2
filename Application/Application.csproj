@@ -46,6 +46,7 @@
     <Compile Include="Controller.cs" />
     <Compile Include="DBController.cs" />
     <Compile Include="GetDBController.cs" />
+    <Compile Include="PictureRepo.cs" />
     <Compile Include="PlantTypeRepo.cs" />
     <Compile Include="BatchRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

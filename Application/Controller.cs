@@ -47,6 +47,10 @@ namespace GruppeA2.Application
         {
             return GDBC.GetAllPlantType();
         }
+        public PictureRepo GetPicturesWithNoCommentAndStatus()
+        {
+            return GDBC.GetPicturesWithNoCommentAndStatus();
+        }
         public void new_batch(int phase, DateTime start_date, DateTime end_date, int plantId)
         {
             ADBC.new_batch(phase, start_date, end_date, plantId);
