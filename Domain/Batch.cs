@@ -8,40 +8,54 @@ namespace GruppeA2.Domain
 {
     public class Batch
     {
-
-        public int ProductionNUmber { get; private set; }
+       
+        public int ProductionNumber { get; private set; }
         public int Phase { get; private set; }
         public DateTime StartDate { get; private set; }
         public DateTime EndDate { get; private set; }
-        public List<Tray> TraysInProduction { get; private set; }
+        public List<Day> DaysInProduction { get; private set; } = new List<Day>();
+        public Day CurrentDay {
+            get
+            {
+                foreach (Day item in DaysInProduction)
+                {
+                    if (item.Date == DateTime.Today)
+                    {
+                        return item;
+                    }
+                }
+                return null;
+            }
+           
+        }
         public Batch(int productionNUmber, int phase, DateTime startDate, DateTime endDate)
         {
-            ProductionNUmber = productionNUmber;
+            ProductionNumber = productionNUmber;
             Phase = phase;
             StartDate = startDate;
             EndDate = endDate;
         }
 
-        public void AddTray(Tray tray)
+        public void AddDay(Day day)
         {
-            TraysInProduction.Add(tray);
+            DaysInProduction.Add(day);
         }
-        public void RemoveTray(int trayNumber)
+        public void RemoveDay(int dayNr)
         {
-            foreach (Tray item in TraysInProduction)
+            foreach (Day item in DaysInProduction)
             {
-                    if (item.Traynumber == trayNumber)
+                    if (item.DayNr == dayNr)
                     {
-                        TraysInProduction.Remove(item);
+                    DaysInProduction.Remove(item);
                     }
             }
         }
-        public Tray GetTray (int trayNumber)
+        public Day GetDay (int dayNr)
         {
-            Tray tray = null;
-            foreach (Tray item in TraysInProduction)
+            Day tray = null;
+            foreach (Day item in DaysInProduction)
             {
-                if (item.Traynumber == trayNumber)
+                if (item.DayNr == dayNr)
                 {
                     tray = item;
                     return tray;

@@ -23,5 +23,10 @@ namespace GruppeA2.Domain
 
         public Picture GetPicture() => throw new NotImplementedException();
 
+        public void DeletePicture(int index)
+        {
+            PictureRepo[index] = null;
+        }
+
     }
 }
