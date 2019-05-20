@@ -47,6 +47,12 @@ namespace GruppeA2.Domain
         {
             PictureLink = link;
         }
+
+        public int FindStatus(int pictureIndex)
+        {
+            return Convert.ToInt32(Status);
+        }
+
         public void ChangePictureStatus(int status)
         {
              
