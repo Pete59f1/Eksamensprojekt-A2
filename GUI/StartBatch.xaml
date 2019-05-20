@@ -12,7 +12,7 @@
             
         </ComboBox>
         <ComboBox Name="cb_Phase" HorizontalAlignment="Left" Margin="130,130,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Cb_Phase_SelectionChanged"/>
-        <Button Name="btn_start_batch" Content="" HorizontalAlignment="Left" Margin="473,298,0,0" VerticalAlignment="Top" Width="142" Height="91" Click="Btn_start_batch_Click"/>
+        <Button Name="btn_start_batch" Content="Start Ny Batch" HorizontalAlignment="Left" Margin="473,298,0,0" VerticalAlignment="Top" Width="142" Height="91" Click="Btn_start_batch_Click"/>
         <Label Name="lbl_days" Content="" HorizontalAlignment="Left" Margin="324,59,0,0" VerticalAlignment="Top" Width="164"/>
         <Label Name="lbl_start_date" Content="" HorizontalAlignment="Left" Margin="324,102,0,0" VerticalAlignment="Top" Width="164"/>
         <Label Name="lbl_end_date" Content="" HorizontalAlignment="Left" Margin="324,134,0,0" VerticalAlignment="Top" Width="164"/>

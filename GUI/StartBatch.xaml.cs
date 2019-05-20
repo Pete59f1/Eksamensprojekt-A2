@@ -91,6 +91,8 @@ namespace GUI
             DateTime end = DateTime.Now.Date.AddDays(chosen_phase);
 
             con.new_batch(phase, start, end, plantId);
+            mainWindow.Visibility = Visibility.Visible;
+            this.Close();
         }
     }
 }
