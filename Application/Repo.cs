@@ -33,7 +33,7 @@ namespace GruppeA2.Application
         public T GetItem(int number)
         {
             T item = RepoCollection[0];
-            for (int i = 0; i < RepoCollection.Count - 1; i++)
+            for (int i = 0; i < RepoCollection.Count; i++)
             {
                 if (i.Equals(number))
                 {

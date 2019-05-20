@@ -43,6 +43,7 @@ namespace GUI
 
         private void Cb_PlantType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            cb_Phase.Items.Clear();
             string chosen_type = cb_PlantType.SelectedItem.ToString();
 
             for (int i = 0; i < plants.Count; i++)
