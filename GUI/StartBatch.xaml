@@ -8,7 +8,7 @@
         Title="StartBatch" Height="450" Width="800">
     <Grid>
         <Button Name="btn_Back" Content="Tilbage" HorizontalAlignment="Left" Margin="674,369,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Back_Click"/>
-        <ComboBox Name="cb_PlantType" HorizontalAlignment="Left" Margin="130,63,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="cb_PlantType" HorizontalAlignment="Left" Margin="130,63,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Cb_PlantType_SelectionChanged"/>
         <ComboBox Name="cb_Phase" HorizontalAlignment="Left" Margin="130,130,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
