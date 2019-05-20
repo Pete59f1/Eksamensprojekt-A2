@@ -29,8 +29,7 @@ namespace GruppeA2.Application
             pic2.ChangePictureStatus(1);
 
             activeBatch.AddDay(new Day(1,new DateTime(2019, 05, 20)));
-            activeBatch.AddDay(new Day(1, new DateTime(2019, 05, 22)));
-            activeBatch.AddDay(new Day(1, new DateTime(2019, 05, 23)));
+
 
             activeBatch.DaysInProduction[0].AddPicture(pic);
             activeBatch.DaysInProduction[0].AddPicture(pic1);
