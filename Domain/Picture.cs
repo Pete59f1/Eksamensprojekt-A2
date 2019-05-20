@@ -64,7 +64,17 @@ namespace GruppeA2.Domain
         }
         public PictureStatus FindStatus(string status)
         {
-            PictureStatus stat = (PictureStatus)Enum.Parse(typeof(PictureStatus), status);
+
+            PictureStatus stat;
+                
+            if (status == "")
+            {
+                stat = PictureStatus.unset;
+            }
+            else
+            {
+                stat = (PictureStatus)Enum.Parse(typeof(PictureStatus), status);
+            }
             return stat;
         }
         

@@ -12,6 +12,7 @@ namespace GruppeA2.Domain
         NormalGrowth,
         SomeGrowth,
         NoGrowth,
-        Dead
+        Dead,
+        unset
     }
 }
