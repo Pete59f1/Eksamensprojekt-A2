@@ -65,5 +65,17 @@
     <Resource Include="Images\10-05-2019.jpg" />
     <Resource Include="Images\12-05-2019.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rose white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rose yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rose blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rose red.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
