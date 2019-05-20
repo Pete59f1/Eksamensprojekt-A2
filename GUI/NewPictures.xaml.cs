@@ -23,16 +23,38 @@ namespace GUI
         private MainWindow mainWindow;
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
+        private Controller con;
+        private PictureRepo newPictures;
         public NewPictures(MainWindow mainWindow)
         {
-            
+            con = new Controller();
             this.mainWindow = mainWindow;
             InitializeComponent();
             UpdatePictures();
         }
-        public void UpdatePictures()
+        private void UpdatePictures()
         {
-            foreach (GruppeA2.Domain.Picture picture in mainWindow.controller.activeBatch.CurrentDay.PictureRepo)
+            newPictures = con.GetPicturesWithNoCommentAndStatus();
+            //foreach (GruppeA2.Domain.Picture picture in mainWindow.controller.activeBatch.CurrentDay.PictureRepo)
+            //{
+
+
+            //    RadioButton radioBtn = new RadioButton
+            //    {
+            //        Margin = new Thickness(2, 10, 2, 10),
+            //        Height = 100,
+            //        HorizontalAlignment = HorizontalAlignment.Center,
+            //        VerticalAlignment = VerticalAlignment.Top,
+            //        Content = new Image { Source = new BitmapImage(new Uri(picture.PictureLink, UriKind.Relative)) },
+            //        Name = "_" + picture.PictureNumber.ToString()
+            //    };
+            //    radioBtn.Checked += this.Radio_Checked;
+            //    WP_mainWrapPanel.Children.Add(radioBtn);
+
+
+            //}
+
+            for(int i = 0; i < newPictures.Count; i++)
             {
 
 
@@ -42,16 +64,11 @@ namespace GUI
                     Height = 100,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Top,
-                    Content = new Image { Source = new BitmapImage(new Uri(picture.PictureLink, UriKind.Relative)) },
-                    Name = "_" + picture.PictureNumber.ToString(),
-
-
-
+                    Content = new Image { Source = new BitmapImage(new Uri(newPictures.GetPictureLink(newPictures.GetItem(i)), UriKind.Relative)) },
+                    Name = "_" + newPictures.GetPictureNumber(newPictures.GetItem(i))
                 };
                 radioBtn.Checked += this.Radio_Checked;
                 WP_mainWrapPanel.Children.Add(radioBtn);
-
-
             }
         }
         private void Radio_Checked(object sender, EventArgs e)
