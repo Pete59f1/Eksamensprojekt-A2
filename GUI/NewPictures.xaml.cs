@@ -75,7 +75,7 @@ namespace GUI
         {
             CheckedRadioButton = sender as RadioButton;
             CheckedIndex = Convert.ToInt32(CheckedRadioButton.Name.Substring(1));
-            tb_Comment.Text = mainWindow.controller.GetPictureCommentInActiveBranch(CheckedIndex);
+            tb_Comment.Text = newPictures.GetPictureComment()
             cb_Growth.SelectedIndex = mainWindow.controller.GetPictureStatusInActiveBranch(CheckedIndex);
         }
 

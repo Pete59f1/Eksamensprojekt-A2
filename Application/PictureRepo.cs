@@ -18,9 +18,16 @@ namespace GruppeA2.Application
         {
             return pic.Name;
         }
-        public string GetPictureComment(Picture pic)
+        public string GetPictureComment(int number)
         {
-            return pic.Comment;
+            foreach (Picture item in RepoCollection)
+            {
+                if (item.PictureNumber == number)
+                {
+                    return item.Comment;
+                }
+            }
+            return "fejl";
         }
         public PictureStatus GetPictureStatus(Picture pic)
         {
