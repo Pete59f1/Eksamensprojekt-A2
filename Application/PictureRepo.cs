@@ -29,9 +29,16 @@ namespace GruppeA2.Application
             }
             return "fejl";
         }
-        public PictureStatus GetPictureStatus(Picture pic)
+        public int GetPictureStatus(int number)
         {
-            return pic.Status;
+            foreach(Picture item in RepoCollection)
+            {
+                if (item.PictureNumber == number)
+                {
+                    return Convert.ToInt32(item.Status);
+                }
+            }
+            return 0;
         }
         public int GetPictureTray(Picture pic)
         {

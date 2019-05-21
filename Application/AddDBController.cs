@@ -33,5 +33,47 @@ namespace GruppeA2.Application
                 }
             }
         }
+        public void save_picture(string comment, string status,int pictureId)
+        {
+            using(SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_SavePicture", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@PicId", pictureId));
+                    cmd.Parameters.Add(new SqlParameter("@Comment", comment));
+                    cmd.Parameters.Add(new SqlParameter("@Status", status));
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch(SqlException ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+        public void delete_picture(int pictureId)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_DeletePicture", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@PicId", pictureId));
+
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
     }
 }

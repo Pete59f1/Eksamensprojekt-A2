@@ -75,8 +75,8 @@ namespace GUI
         {
             CheckedRadioButton = sender as RadioButton;
             CheckedIndex = Convert.ToInt32(CheckedRadioButton.Name.Substring(1));
-            tb_Comment.Text = newPictures.GetPictureComment()
-            cb_Growth.SelectedIndex = mainWindow.controller.GetPictureStatusInActiveBranch(CheckedIndex);
+            tb_Comment.Text = newPictures.GetPictureComment(CheckedIndex);
+            cb_Growth.SelectedIndex = newPictures.GetPictureStatus(CheckedIndex);
         }
 
 
@@ -107,17 +107,27 @@ namespace GUI
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex] != null)
-            {
-                mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex].ChangePictureComment(tb_Comment.Text);
-                mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex].ChangePictureStatus(cb_Growth.SelectedIndex);
-            }
+            //if (mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex] != null)
+            //{
+            string comment = tb_Comment.Text;
+            string status = cb_Growth.SelectedValue.ToString();
+            int pictureId = CheckedIndex;
+            mainWindow.controller.save_picture(comment, status, pictureId);
+            WP_mainWrapPanel.Children.Clear();
+            UpdatePictures();
+                //mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex].ChangePictureComment(tb_Comment.Text);
+                //mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex].ChangePictureStatus(cb_Growth.SelectedIndex);
+            //}
         }
 
         private void DeltePictre_Click(object sender, RoutedEventArgs e)
         {
-            WP_mainWrapPanel.Children.Remove(CheckedRadioButton);
-            mainWindow.controller.activeBatch.CurrentDay.DeletePicture(CheckedIndex);
+            int pictureId = CheckedIndex;
+            mainWindow.controller.delete_picture(pictureId);
+            WP_mainWrapPanel.Children.Clear();
+            UpdatePictures();
+            //WP_mainWrapPanel.Children.Remove(CheckedRadioButton);
+            //mainWindow.controller.activeBatch.CurrentDay.DeletePicture(CheckedIndex);
         }
     }
 }

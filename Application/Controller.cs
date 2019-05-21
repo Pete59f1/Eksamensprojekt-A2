@@ -24,7 +24,15 @@ namespace GruppeA2.Application
         {
 
         }
-
+        public void save_picture(string comment, string status, int pictureId)
+        {
+            ADBC.save_picture(comment, status, pictureId);
+            
+        }
+        public void delete_picture(int pictureId)
+        {
+            ADBC.delete_picture(pictureId);
+        }
         public PlantTypeRepo GetAllPlantType()
         {
             return GDBC.GetAllPlantType();
