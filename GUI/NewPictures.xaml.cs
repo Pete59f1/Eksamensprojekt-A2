@@ -110,7 +110,7 @@ namespace GUI
             //if (mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex] != null)
             //{
             string comment = tb_Comment.Text;
-            string status = cb_Growth.SelectedValue.ToString();
+            string status = cb_Growth.Text;
             int pictureId = CheckedIndex;
             mainWindow.controller.save_picture(comment, status, pictureId);
             WP_mainWrapPanel.Children.Clear();
