@@ -32,6 +32,7 @@ namespace GUI
             InitializeComponent();
             UpdatePictures();
         }
+        
         private void UpdatePictures()
         {
             newPictures = mainWindow.controller.GetPicturesWithNoCommentAndStatus();

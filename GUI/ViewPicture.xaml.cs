@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using GruppeA2.Application;
 namespace GUI
 {
     /// <summary>
@@ -19,6 +19,7 @@ namespace GUI
     /// </summary>
     public partial class ViewPicture : Window
     {
+        private Controller con;
         private MainWindow mainWindow;
         private int CheckedIndex { get; set; }
         private Window previousWindow;
@@ -26,6 +27,7 @@ namespace GUI
 
         public ViewPicture(Window previousWindow, object choosenImage, int checkedIndex)
         {
+            con = new Controller();
             InitializeComponent();
             ChoosenImage = choosenImage as Image;
             this.previousWindow = previousWindow;
@@ -44,7 +46,7 @@ namespace GUI
             string comment = tb_comment.Text;
             string status = cb_Status.Text;
             int pictureId = CheckedIndex;
-            mainWindow.controller.save_picture(comment, status, pictureId);
+            con.save_picture(comment, status, pictureId);
             previousWindow.Visibility = Visibility.Visible;
             this.Close();
         }
@@ -52,9 +54,10 @@ namespace GUI
         private void Btn_delete_Click(object sender, RoutedEventArgs e)
         {
             
-            mainWindow.controller.delete_picture(CheckedIndex);
+            con.delete_picture(CheckedIndex);
             previousWindow.Visibility = Visibility.Visible;
             this.Close();
+
         }
 
         
