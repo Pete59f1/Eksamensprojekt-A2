@@ -23,18 +23,18 @@ namespace GUI
         private MainWindow mainWindow;
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
-        private Controller con;
+        
         private PictureRepo newPictures;
         public NewPictures(MainWindow mainWindow)
         {
-            con = new Controller();
+            
             this.mainWindow = mainWindow;
             InitializeComponent();
             UpdatePictures();
         }
         private void UpdatePictures()
         {
-            newPictures = con.GetPicturesWithNoCommentAndStatus();
+            newPictures = mainWindow.controller.GetPicturesWithNoCommentAndStatus();
             //foreach (GruppeA2.Domain.Picture picture in mainWindow.controller.activeBatch.CurrentDay.PictureRepo)
             //{
 
