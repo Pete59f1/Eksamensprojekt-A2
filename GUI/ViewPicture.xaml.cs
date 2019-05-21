@@ -19,16 +19,19 @@ namespace GUI
     /// </summary>
     public partial class ViewPicture : Window
     {
+        private MainWindow mainWindow;
+        private int CheckedIndex { get; set; }
         private Window previousWindow;
         public Image ChoosenImage { get; set; }
 
-        public ViewPicture(Window previousWindow, object choosenImage)
+        public ViewPicture(Window previousWindow, object choosenImage, int checkedIndex)
         {
             InitializeComponent();
             ChoosenImage = choosenImage as Image;
             this.previousWindow = previousWindow;
             im_PictureToBeShown.Source = ChoosenImage.Source;
-            
+            CheckedIndex = checkedIndex;
+            mainWindow = 
         }
 
         private void Btn_Back_Click(object sender, RoutedEventArgs e)
@@ -36,5 +39,25 @@ namespace GUI
             previousWindow.Visibility = Visibility.Visible;
             this.Close();
         }
+
+        private void Btn_Save_Click(object sender, RoutedEventArgs e)
+        {
+            string comment = tb_comment.Text;
+            string status = cb_Status.Text;
+            int pictureId = CheckedIndex;
+            mainWindow.controller.save_picture(comment, status, pictureId);
+            previousWindow.Visibility = Visibility.Visible;
+            this.Close();
+        }
+
+        private void Btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+            
+            mainWindow.controller.delete_picture(CheckedIndex);
+            previousWindow.Visibility = Visibility.Visible;
+            this.Close();
+        }
+
+        
     }
 }

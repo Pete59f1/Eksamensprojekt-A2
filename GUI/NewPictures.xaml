@@ -34,7 +34,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <TextBox Grid.Row="0" x:Name="tb_Comment" Text="Write Comment Here" Margin="10 10 10 10" BorderBrush="DarkBlue" BorderThickness="1.2" TextWrapping="Wrap" MaxLength="499"/>
-                <ComboBox Grid.Row="1" x:Name="cb_Growth" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120" SelectionChanged="Cb_Growth_SelectionChanged">
+                <ComboBox Grid.Row="1" x:Name="cb_Growth" VerticalAlignment="Center" HorizontalAlignment="Center" Width="120">
                     <ComboBoxItem>Exeptional Vækst</ComboBoxItem>
                     <ComboBoxItem IsSelected="True">Normal Vækst</ComboBoxItem>
                     <ComboBoxItem>Lidt Vækst</ComboBoxItem>

@@ -94,16 +94,13 @@ namespace GUI
 
         private void Btn_ViewPicture_Click(object sender, RoutedEventArgs e)
         {
-            ViewPicture viewPicture = new ViewPicture(this, CheckedRadioButton.Content);
+            ViewPicture viewPicture = new ViewPicture(this, CheckedRadioButton.Content, CheckedIndex);
             this.Visibility = Visibility.Hidden;
             viewPicture.Show();
             
         }
 
-        private void Cb_Growth_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
