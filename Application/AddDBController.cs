@@ -26,6 +26,31 @@ namespace GruppeA2.Application
                     cmd.Parameters.Add(new SqlParameter("@endDate", end_date));
                     cmd.Parameters.Add(new SqlParameter("@plantId", plantId));
                     cmd.ExecuteNonQuery();
+
+                    cmd = new SqlCommand("sp_GetNewBatchId");
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataReader read = cmd.ExecuteReader();
+
+                    if (read.HasRows)
+                    {
+                        while (read.Read())
+                        {
+                            string batId = read["BatchNr"].ToString();
+                            int batchNr = int.Parse(batId);
+                        }
+                    }
+
+                    int days = ((TimeSpan)(end_date - start_date)).Days;
+
+                    cmd = new SqlCommand("sp_CreateDay");
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    for (int i = 1; i <= days; i++)
+                    {
+
+                    }
+
                 }
                 catch (SqlException ex)
                 {
