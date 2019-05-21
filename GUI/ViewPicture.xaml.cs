@@ -31,7 +31,6 @@ namespace GUI
             this.previousWindow = previousWindow;
             im_PictureToBeShown.Source = ChoosenImage.Source;
             CheckedIndex = checkedIndex;
-            mainWindow = 
         }
 
         private void Btn_Back_Click(object sender, RoutedEventArgs e)
