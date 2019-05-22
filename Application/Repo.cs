@@ -22,9 +22,9 @@ namespace GruppeA2.Application
         {
             RepoCollection = new List<T>();
         }
-        public void AddItem(T index)
+        public void AddItem(T item)
         {
-            RepoCollection.Add(index);
+            RepoCollection.Add(item);
         }
         public void RemoveItem(int index)
         {
