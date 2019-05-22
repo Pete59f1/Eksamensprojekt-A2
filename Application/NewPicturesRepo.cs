@@ -12,30 +12,8 @@ namespace GruppeA2.Application
     {
         public int GetPictureNumberByIndex(int index) => RepoCollection[index].PictureNumber;
         public DateTime GetPictureNameByIndex(int index) => RepoCollection[index].Name;
-
-
-        public string GetPictureCommentByPictureNumber(int pictureNumber)
-        {
-            foreach (Picture item in RepoCollection)
-            {
-                if (item.PictureNumber == pictureNumber)
-                {
-                    return item.Comment;
-                }
-            }
-            return "fejl";
-        }
-        public int GetPictureStatusByPictureNumber(int pictureNumber)
-        {
-            foreach(Picture item in RepoCollection)
-            {
-                if (item.PictureNumber == pictureNumber)
-                {
-                    return Convert.ToInt32(item.Status);
-                }
-            }
-            return 0;
-        }
+        public string GetPictureCommentByIndex(int index) => RepoCollection[index].Comment;
+        public int GetPictureStatusByIndex(int index) => Convert.ToInt32(RepoCollection[index].Status);
         public string GetPictureLinkByIndex(int index) => RepoCollection[index].PictureLink;
 
     }
