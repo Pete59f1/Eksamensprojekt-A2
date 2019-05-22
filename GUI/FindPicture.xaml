@@ -8,49 +8,11 @@
         Title="Find Billeder" Height="450" Width="800"
         Closing="FindPicture_Closing" ResizeMode="NoResize">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="250"/>
-        </Grid.ColumnDefinitions>
-        <!--Functions-->
-        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black"/>
-        <Grid Grid.Row="0" Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Button Grid.Row="5" x:Name="btn_back"  Content="Tilbage" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75"  Click="Back_Click"/>
-            <ComboBox Grid.Row="1" x:Name="cbb_BatchNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="0 0 0 45" SelectionChanged="BatchNumber_SelectionChanged"/>
-            <Label Grid.Row="1" Content="Dag nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="0 30 0 0" />
-            <ComboBox Grid.Row="2" x:Name="cbb_DayNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="0 0 0 45" SelectionChanged="DayNumber_SelectionChanged"/>
-            <Label Grid.Row="0" Content="Batch Nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="0 30 0 0" />
-            <Button Name="btn_ViewPicture" Content="Se billede" HorizontalAlignment="Left" Margin="88,40,0,0" Grid.Row="4" VerticalAlignment="Top" Width="74" Click="Btn_ViewPicture_Click"/>
-
-        </Grid>
-        <!--Images-->
-        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1 1 0 1">
-            <ScrollViewer>
-                <Grid>
-
-                    <WrapPanel x:Name="WP_mainWrapPanel" Orientation="Horizontal" VerticalAlignment="top" >
-
-
-                    </WrapPanel>
-
-                </Grid>
-            </ScrollViewer>
-        </Border>
-
-
-
+        <Button x:Name="btn_back"  Content="Tilbage" HorizontalAlignment="Center" VerticalAlignment="Center" Width="74"  Click="Back_Click" Margin="686,370,34,31"/>
+            <ComboBox x:Name="cbb_BatchNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="322,80,352,319" SelectionChanged="Cbb_BatchNumber_SelectionChanged"/>
+            <Label Content="Dag nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="343,147,371,248" />
+            <ComboBox x:Name="cbb_DayNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="322,178,352,221"/>
+            <Label Grid.Row="0" Content="Batch Nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="333,39,371,356" />
+            <Button Name="btn_ViewPictures" Content="Se billeder" HorizontalAlignment="Left" Margin="349,254,0,0" VerticalAlignment="Top" Width="74" Click="Btn_ViewPictures_Click"/>
     </Grid>
 </Window>

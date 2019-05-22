@@ -21,34 +21,28 @@ namespace GUI
     public partial class NewPictures : Window
     {
         private MainWindow mainWindow;
+        private FindPicture findPicture;
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
-        private NewPicturesRepo pictureRepo;
+        //private NewPicturesRepo pictureRepo;
         
-        public NewPictures(MainWindow mainWindow,bool previous)
+        public NewPictures(MainWindow mainWindow)
         {
-            bool fromMainWindow = previous;
             this.mainWindow = mainWindow;
             InitializeComponent();
             UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
-            if (fromMainWindow == true) {
-                pictureRepo = mainWindow.controller.GetPicturesWithNoCommentAndStatus();
-            }
-            else
-            {
-
-            }
-
         }
-        
+        public NewPictures(FindPicture findPicture, int batchNr, int dayNr)
+        {
+            this.findPicture = findPicture; 
+            InitializeComponent();
+            tb_Comment.Text = batchNr.ToString();
+        }
+
         private void UpdatePictures(NewPicturesRepo pictureRepo)
         {
-           
-
             for(int i = 0; i < pictureRepo.Count; i++)
             {
-
-
                 RadioButton radioBtn = new RadioButton
                 {
                     Margin = new Thickness(2, 10, 2, 10),
@@ -64,7 +58,6 @@ namespace GUI
         }
         private void Radio_Checked(object sender, EventArgs e)
         {
-            
             CheckedRadioButton = sender as RadioButton;
             CheckedIndex = Convert.ToInt32(CheckedRadioButton.Name.Substring(1));
             //tb_Comment.Text = pictureRepo.GetPictureCommentByIndex(CheckedIndex); Skal ikke hente comment og status på nye billeder
@@ -90,11 +83,11 @@ namespace GUI
             viewPicture.Show();
         }
 
-        private void NewPictures_VisibilityChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            WP_mainWrapPanel.Children.Clear();
-            UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
-        }
+        //private void NewPictures_VisibilityChanged(object sender, DependencyPropertyChangedEventArgs e)
+        //{
+        //    WP_mainWrapPanel.Children.Clear();
+        //    UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
+        //}
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {

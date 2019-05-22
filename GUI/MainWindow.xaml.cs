@@ -32,8 +32,7 @@ namespace GUI
         private void NewPictures_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
-            bool previous = true;
-            NewPictures newPictures = new NewPictures(this, previous);
+            NewPictures newPictures = new NewPictures(this);
             newPictures.Show(); 
         }
         private void FindPictures_Click(object sender, RoutedEventArgs e)

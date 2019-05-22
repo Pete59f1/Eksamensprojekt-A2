@@ -164,7 +164,6 @@ namespace GruppeA2.Application
                             string dat = read["Date"].ToString();
                             DateTime date = DateTime.Parse(dat);
                             Day day = new Day(dayId, dayNr, date);
-                            day.PicturesFromThisDay = GetAllPicturesFromDayId(dayId);
                             days.Add(day);
                         }
                     }
