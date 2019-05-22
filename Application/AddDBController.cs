@@ -46,16 +46,18 @@ namespace GruppeA2.Application
                             batchNr = int.Parse(batId);
                         }
                     }
+                    read.Close();
 
 
                     //Create the number of days
-                    int days = ((TimeSpan)(end_date - start_date)).Days;
+                    int days = ((TimeSpan)(end_date - start_date)).Days + 1;
 
-                    cmd = new SqlCommand("sp_CreateDay", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    
 
                     for (int i = 0; i < days; i++)
                     {
+                        cmd = new SqlCommand("sp_CreateDay", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@DayNr", i + 1));
                         cmd.Parameters.Add(new SqlParameter("@Date", start_date.AddDays(i)));
                         cmd.Parameters.Add(new SqlParameter("@BatchNr", batchNr));
