@@ -42,7 +42,7 @@ namespace GruppeA2.Application
         }
         public int GetPictureTray(Picture pic)
         {
-            return pic.Traynumber;
+            return pic.TrayNumber;
         }
         public string GetPictureLink(Picture pic)
         {

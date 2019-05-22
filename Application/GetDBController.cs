@@ -81,7 +81,9 @@ namespace GruppeA2.Application
                             string comment = read["Comment"].ToString();
                             string status = read["Status"].ToString();
                             string pictureLink = read["PictureLink"].ToString();
-                            Picture pic = new Picture(picNumber, date, comment, status, pictureLink);
+                            string tray = read["TrayNr"].ToString();
+                            int trayNr = int.Parse(tray);
+                            Picture pic = new Picture(picNumber, date, comment, status, pictureLink, trayNr);
                             savedPictureRepo.AddItem(pic);
                         }
                     }
