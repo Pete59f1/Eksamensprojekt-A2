@@ -57,5 +57,7 @@ namespace Test
             p.RemoveItem(0);
             Assert.IsFalse(p.RepoCollection.Contains(new PlantType(1, "Rose", "15", "20", "25", "20")));
         }
+        //NewPicturesRepo Test
+
     }
 }

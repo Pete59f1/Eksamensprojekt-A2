@@ -10,43 +10,33 @@ namespace GruppeA2.Application
 {
     public class NewPicturesRepo : Repo<Picture>
     {
-        public int GetPictureNumber(Picture pic)
-        {
-            return pic.PictureNumber;
-        }
-        public DateTime GetPictureName(Picture pic)
-        {
-            return pic.Name;
-        }
-        public string GetPictureComment(int number)
+        public int GetPictureNumberByIndex(int index) => RepoCollection[index].PictureNumber;
+        public DateTime GetPictureNameByIndex(int index) => RepoCollection[index].Name;
+
+
+        public string GetPictureCommentByPictureNumber(int pictureNumber)
         {
             foreach (Picture item in RepoCollection)
             {
-                if (item.PictureNumber == number)
+                if (item.PictureNumber == pictureNumber)
                 {
                     return item.Comment;
                 }
             }
             return "fejl";
         }
-        public int GetPictureStatus(int number)
+        public int GetPictureStatusByPictureNumber(int pictureNumber)
         {
             foreach(Picture item in RepoCollection)
             {
-                if (item.PictureNumber == number)
+                if (item.PictureNumber == pictureNumber)
                 {
                     return Convert.ToInt32(item.Status);
                 }
             }
             return 0;
         }
-        public int GetPictureTray(Picture pic)
-        {
-            return pic.TrayNumber;
-        }
-        public string GetPictureLink(Picture pic)
-        {
-            return pic.PictureLink;
-        }
+        public string GetPictureLinkByIndex(int index) => RepoCollection[index].PictureLink;
+
     }
 }

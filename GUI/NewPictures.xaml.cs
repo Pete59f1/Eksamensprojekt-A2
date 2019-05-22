@@ -50,8 +50,8 @@ namespace GUI
                     Height = 100,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Top,
-                    Content = new Image { Source = new BitmapImage(new Uri(pictureRepo.GetPictureLink(pictureRepo.GetItem(i)), UriKind.Relative)) },
-                    Name = "_" + pictureRepo.GetPictureNumber(pictureRepo.GetItem(i))
+                    Content = new Image { Source = new BitmapImage(new Uri(pictureRepo.GetPictureLinkByIndex(i), UriKind.Relative)) },
+                    Name = "_" + pictureRepo.GetPictureNumberByIndex(i)
                 };
                 radioBtn.Checked += this.Radio_Checked;
                 WP_mainWrapPanel.Children.Add(radioBtn);
@@ -62,8 +62,8 @@ namespace GUI
             
             CheckedRadioButton = sender as RadioButton;
             CheckedIndex = Convert.ToInt32(CheckedRadioButton.Name.Substring(1));
-            tb_Comment.Text = pictureRepo.GetPictureComment(CheckedIndex);
-            cb_Growth.SelectedIndex = pictureRepo.GetPictureStatus(CheckedIndex);
+            tb_Comment.Text = pictureRepo.GetPictureCommentByPictureNumber(CheckedIndex);
+            cb_Growth.SelectedIndex = pictureRepo.GetPictureStatusByPictureNumber(CheckedIndex);
         }
 
 
