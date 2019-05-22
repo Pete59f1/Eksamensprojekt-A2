@@ -23,7 +23,7 @@ namespace GUI
         private MainWindow mainWindow;
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
-        private PictureRepo pictureRepo;
+        private NewPicturesRepo pictureRepo;
         
         public NewPictures(MainWindow mainWindow)
         {
@@ -36,7 +36,7 @@ namespace GUI
 
         }
         
-        private void UpdatePictures(PictureRepo pictureRepo)
+        private void UpdatePictures(NewPicturesRepo pictureRepo)
         {
            
 

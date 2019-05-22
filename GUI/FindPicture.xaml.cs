@@ -23,13 +23,13 @@ namespace GUI
         private MainWindow mainWindow;
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
-        private PictureRepo pictureRepo;
+        private NewPicturesRepo pictureRepo;
         public FindPicture(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
-        private void UpdatePictures(PictureRepo pictureRepo)
+        private void UpdatePictures(NewPicturesRepo pictureRepo)
         {
 
 

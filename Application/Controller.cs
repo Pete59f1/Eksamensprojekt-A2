@@ -37,7 +37,7 @@ namespace GruppeA2.Application
         {
             return GDBC.GetAllPlantType();
         }
-        public PictureRepo GetPicturesWithNoCommentAndStatus()
+        public NewPicturesRepo GetPicturesWithNoCommentAndStatus()
         {
             return GDBC.GetPicturesWithNoCommentAndStatus();
         }

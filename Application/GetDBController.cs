@@ -55,9 +55,9 @@ namespace GruppeA2.Application
 
         }
 
-        public PictureRepo GetPicturesWithNoCommentAndStatus()
+        public NewPicturesRepo GetPicturesWithNoCommentAndStatus()
         {
-            PictureRepo savedPictureRepo = new PictureRepo();
+            NewPicturesRepo savedPictureRepo = new NewPicturesRepo();
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 try
@@ -88,6 +88,123 @@ namespace GruppeA2.Application
                         }
                     }
                     return savedPictureRepo;
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        public BatchRepo GetAllBatches()
+        {
+            BatchRepo Batches = new BatchRepo();
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_GetAllBatches", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataReader read = cmd.ExecuteReader();
+
+                    if (read.HasRows)
+                    {
+                        while (read.Read())
+                        {
+                            string batNr = read["BatchNr"].ToString();
+                            int batchNr = int.Parse(batNr);
+                            string pha = read["Phase"].ToString();
+                            int phase = int.Parse(pha);
+                            string sDate = read["StartDate"].ToString();
+                            DateTime startDate = DateTime.Parse(sDate);
+                            string eDate = read["EndDate"].ToString();
+                            DateTime endDate = DateTime.Parse(eDate);
+                            string plant = read["PlantId"].ToString();
+                            int plantId = int.Parse(plant);
+                            Batch batch = new Batch(batchNr, phase, startDate, endDate, plantId);
+                            batch.DaysInProduction = GetAllDaysFromBatchId(batchNr);
+                            Batches.AddItem(batch);
+                        }
+                    }
+                    return Batches;
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        public List<Day> GetAllDaysFromBatchId(int batchNr)
+        {
+            List<Day> days = new List<Day>();
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_GetAllDaysFromBatchId", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataReader read = cmd.ExecuteReader();
+
+                    if (read.HasRows)
+                    {
+                        while (read.Read())
+                        {
+                            string dId = read["DayId"].ToString();
+                            int dayId = int.Parse(dId);
+                            string dNr = read["DayNr"].ToString();
+                            int dayNr = int.Parse(dNr);
+                            string dat = read["Date"].ToString();
+                            DateTime date = DateTime.Parse(dat);
+                            Day day = new Day(dayId, dayNr, date);
+                            day.PicturesFromThisDay = 
+                            days.Add(day);
+                        }
+                    }
+                    return days;
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
+
+        public List<Picture> GetAllPicturesFromDayId(int dayId)
+        {
+            List<Picture> pictures = new List<Picture>();
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("sp_GetAllPicturesFromDayId", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlDataReader read = cmd.ExecuteReader();
+
+                    if (read.HasRows)
+                    {
+                        while (read.Read())
+                        {
+                            string pId = read["PicId"].ToString();
+                            int picId = int.Parse(pId);
+                            string dat = read["Date"].ToString();
+                            DateTime date = DateTime.Parse(dat);
+                            string comment = read["Comment"].ToString();
+                            PictureStatus status = read["Status"].ToString();
+                            Picture picture = new Picture();
+                            pictures.Add(picture);
+                        }
+                    }
+                    return pictures;
                 }
                 catch (SqlException ex)
                 {
