@@ -61,7 +61,6 @@ namespace GUI
         private void FindPicture_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             mainWindow.Visibility = Visibility.Visible;
-
         }
 
         

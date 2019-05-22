@@ -75,7 +75,6 @@ namespace GUI
         private void NewPictures_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             mainWindow.Visibility = Visibility.Visible;
-           
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -89,29 +88,22 @@ namespace GUI
             ViewPicture viewPicture = new ViewPicture(this, CheckedRadioButton.Content, CheckedIndex);
             this.Visibility = Visibility.Hidden;
             viewPicture.Show();
-            
         }
 
         private void NewPictures_VisibilityChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             WP_mainWrapPanel.Children.Clear();
             UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
-
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            //if (mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex] != null)
-            //{
             string comment = tb_Comment.Text;
             string status = cb_Growth.Text;
             int pictureId = CheckedIndex;
             mainWindow.controller.save_picture(comment, status, pictureId);
             WP_mainWrapPanel.Children.Clear();
             UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
-                //mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex].ChangePictureComment(tb_Comment.Text);
-                //mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex].ChangePictureStatus(cb_Growth.SelectedIndex);
-            //}
         }
 
         private void DeletePictre_Click(object sender, RoutedEventArgs e)
@@ -120,8 +112,6 @@ namespace GUI
             mainWindow.controller.delete_picture(pictureId);
             WP_mainWrapPanel.Children.Clear();
             UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
-            //WP_mainWrapPanel.Children.Remove(CheckedRadioButton);
-            //mainWindow.controller.activeBatch.CurrentDay.DeletePicture(CheckedIndex);
         }
     }
 }
