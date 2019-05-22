@@ -79,7 +79,7 @@ namespace GruppeA2.Application
                             DateTime date = DateTime.Parse(name);
                             date.ToString("dd/MM/yyyy HH:mm");
                             string comment = read["Comment"].ToString();
-                            string status = read["Status"].ToString();
+                            PictureStatus status = Picture.ConvertStringStatusToEnumStatus(read["Status"].ToString());
                             string pictureLink = read["PictureLink"].ToString();
                             string tray = read["TrayNr"].ToString();
                             int trayNr = int.Parse(tray);
@@ -163,7 +163,7 @@ namespace GruppeA2.Application
                             string dat = read["Date"].ToString();
                             DateTime date = DateTime.Parse(dat);
                             Day day = new Day(dayId, dayNr, date);
-                            day.PicturesFromThisDay = 
+                            day.PicturesFromThisDay = GetAllPicturesFromDayId(dayId);
                             days.Add(day);
                         }
                     }
@@ -199,7 +199,7 @@ namespace GruppeA2.Application
                             string dat = read["Date"].ToString();
                             DateTime date = DateTime.Parse(dat);
                             string comment = read["Comment"].ToString();
-                            PictureStatus status = Picture.FindStatus(read["Status"].ToString());
+                            PictureStatus status = Picture.ConvertStringStatusToEnumStatus(read["Status"].ToString());
                             string pictureLink = read["PictureLink"].ToString();
                             string traNr = read["TrayNr"].ToString();
                             int trayNr = int.Parse(traNr);
