@@ -23,7 +23,7 @@ namespace GUI
         private MainWindow mainWindow;
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
-        private NewPicturesRepo pictureRepo;
+        //private NewPicturesRepo pictureRepo;
         private BatchRepo batchRepo;
         public FindPicture(MainWindow mainWindow)
         {

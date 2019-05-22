@@ -62,8 +62,8 @@ namespace GUI
             
             CheckedRadioButton = sender as RadioButton;
             CheckedIndex = Convert.ToInt32(CheckedRadioButton.Name.Substring(1));
-            tb_Comment.Text = pictureRepo.GetPictureCommentByIndex(CheckedIndex);
-            cb_Growth.SelectedIndex = pictureRepo.GetPictureStatusByIndex(CheckedIndex);
+            //tb_Comment.Text = pictureRepo.GetPictureCommentByIndex(CheckedIndex); Skal ikke hente comment og status på nye billeder
+            //cb_Growth.SelectedIndex = pictureRepo.GetPictureStatusByIndex(CheckedIndex);
         }
 
 
