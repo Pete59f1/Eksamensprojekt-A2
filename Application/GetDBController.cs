@@ -201,7 +201,8 @@ namespace GruppeA2.Application
                             string dat = read["Date"].ToString();
                             DateTime date = DateTime.Parse(dat);
                             string comment = read["Comment"].ToString();
-                            PictureStatus status = Picture.ConvertStringStatusToEnumStatus(read["Status"].ToString());
+                            string stat = Picture.ConvertStatusFromDkToEng(read["Status"].ToString());
+                            PictureStatus status = Picture.ConvertStringStatusToEnumStatus(stat);
                             string pictureLink = read["PictureLink"].ToString();
                             string traNr = read["TrayNr"].ToString();
                             int trayNr = int.Parse(traNr);

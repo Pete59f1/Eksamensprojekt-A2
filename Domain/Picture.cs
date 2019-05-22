@@ -38,6 +38,32 @@ namespace GruppeA2.Domain
             }
             return stat;
         }
-        
+
+        public static string ConvertStatusFromDkToEng(string status)
+        {
+            string translation = "";
+
+            if (status.Equals("Exeptional Vækst"))
+            {
+                translation = "ExceptionalGrowth";
+            }
+            else if (status.Equals("Normal Vækst"))
+            {
+                translation = "NormalGrowth";
+            }
+            else if (status.Equals("Lidt Vækst"))
+            {
+                translation = "SomeGrowth";
+            }
+            else if (status.Equals("Intet Vækst"))
+            {
+                translation = "NoGrowth";
+            }
+            else if (status.Equals("Død"))
+            {
+                translation = "Dead";
+            }
+            return translation;
+        }
     }
 }
