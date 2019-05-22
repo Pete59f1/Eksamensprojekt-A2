@@ -30,10 +30,11 @@ namespace GruppeA2.Application
 
 
                     //Get the new batch's number
+                    
                     int batchNr = 0;
 
-                    cmd = new SqlCommand("sp_GetNewBatchId");
-                    //cmd.CommandType = CommandType.StoredProcedure;
+                    cmd = new SqlCommand("sp_GetNewBatchId", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     SqlDataReader read = cmd.ExecuteReader();
 
@@ -50,8 +51,8 @@ namespace GruppeA2.Application
                     //Create the number of days
                     int days = ((TimeSpan)(end_date - start_date)).Days;
 
-                    cmd = new SqlCommand("sp_CreateDay");
-                    //cmd.CommandType = CommandType.StoredProcedure;
+                    cmd = new SqlCommand("sp_CreateDay", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     for (int i = 0; i < days; i++)
                     {
