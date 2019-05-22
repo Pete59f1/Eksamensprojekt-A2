@@ -149,6 +149,7 @@ namespace GruppeA2.Application
 
                     SqlCommand cmd = new SqlCommand("sp_GetAllDaysFromBatchId", con);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@BatchNr", batchNr));
 
                     SqlDataReader read = cmd.ExecuteReader();
 
@@ -187,6 +188,7 @@ namespace GruppeA2.Application
 
                     SqlCommand cmd = new SqlCommand("sp_GetAllPicturesFromDayId", con);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@DayId", dayId));
 
                     SqlDataReader read = cmd.ExecuteReader();
 
