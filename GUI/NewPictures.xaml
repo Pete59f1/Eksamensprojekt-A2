@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Closing="NewPictures_Closing"
         Title="Nye Billeder" Height="450" Width="800"
+        IsVisibleChanged="NewPictures_VisibilityChanged"
+        
         ResizeMode="NoResize"
         >
 

@@ -19,7 +19,7 @@ namespace Test
         public void DomainTestInitialize()
         {
             date = new DateTime(2019 - 01 - 01, 11, 32);
-            pictureTest = new Picture(1, date, "HEJ", "1", "C:\\Test");
+           
         }
 
         

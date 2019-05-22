@@ -31,6 +31,7 @@ namespace GUI
             this.mainWindow = mainWindow;
             InitializeComponent();
             UpdatePictures();
+            
         }
         
         private void UpdatePictures()
@@ -101,7 +102,12 @@ namespace GUI
             
         }
 
-        
+        private void NewPictures_VisibilityChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            WP_mainWrapPanel.Children.Clear();
+            UpdatePictures();
+
+        }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
