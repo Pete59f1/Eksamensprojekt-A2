@@ -71,9 +71,12 @@ namespace Test
             Assert.AreEqual(1, p.TrayNumber);
         }
         [TestMethod]
-        public void Picture_Convert()
+        public void Picture_Convert_StringStatus_To_Enum_PictureStatus()
         {
+            string dead = "Dead";
+            PictureStatus deadPictureStatus = Picture.ConvertStringStatusToEnumStatus(dead);
 
+            Assert.AreEqual(PictureStatus.Dead, deadPictureStatus);
         }
     }
 }
