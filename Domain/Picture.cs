@@ -47,7 +47,7 @@ namespace GruppeA2.Domain
         {
             Comment = comment;
         }
-        public PictureStatus FindStatus(string status)
+        public static PictureStatus FindStatus(string status)
         {
             PictureStatus stat;
             if (status == "")

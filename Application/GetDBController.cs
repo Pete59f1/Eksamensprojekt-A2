@@ -199,8 +199,11 @@ namespace GruppeA2.Application
                             string dat = read["Date"].ToString();
                             DateTime date = DateTime.Parse(dat);
                             string comment = read["Comment"].ToString();
-                            PictureStatus status = read["Status"].ToString();
-                            Picture picture = new Picture();
+                            PictureStatus status = Picture.FindStatus(read["Status"].ToString());
+                            string pictureLink = read["PictureLink"].ToString();
+                            string traNr = read["TrayNr"].ToString();
+                            int trayNr = int.Parse(traNr);
+                            Picture picture = new Picture(picId, date, comment, status, pictureLink, trayNr);
                             pictures.Add(picture);
                         }
                     }
