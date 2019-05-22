@@ -13,33 +13,34 @@ namespace GruppeA2.Domain
         public DateTime Name { get; private set; }
         public string Comment { get; private set; }
         public PictureStatus Status { get; private set; }
-        public int Traynumber { get; private set; }
+        public int TrayNumber { get; private set; }
         public string PictureLink { get; private set; } = "/Domain;component/Images/01-05-2019.png";
 
-        public Picture(int pictureNumber, DateTime name, string comment, string status, string pictureLink)
+        public Picture(int pictureNumber, DateTime name, string comment, string status, string pictureLink, int tray)
         {
             PictureNumber = pictureNumber;
             Name = name;
             Comment = comment;
             Status = FindStatus(status);
             PictureLink = pictureLink;
+            TrayNumber = tray;
         }
         public Picture(DateTime name, PictureStatus status, int traynumber)
         {
             Name = name;
             Status = status;
-            Traynumber = traynumber;
+            TrayNumber = traynumber;
         }
         public Picture(DateTime name, string comment, int traynumber)
         {
             Name = name;
             Comment = comment;
-            Traynumber = traynumber;
+            TrayNumber = traynumber;
         }
         public Picture(DateTime name, int traynumber)
         {
             Name = name;
-            Traynumber = traynumber;
+            TrayNumber = traynumber;
         }
         public void ChangePictureNumber(int number) => this.PictureNumber = number;
 
