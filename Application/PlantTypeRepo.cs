@@ -9,29 +9,29 @@ namespace GruppeA2.Application
 {
     public class PlantTypeRepo : Repo<PlantType>
     {
-        public int get_plant_number(PlantType planttype)
+        public int GetPlantNumber(PlantType plantType)
         {
-            return planttype.PlantNumber;
+            return plantType.PlantNumber;
         }
-        public string get_plant_type(PlantType planttype)
+        public string GetPlantType(PlantType plantType)
         {
-            return planttype.Type;
+            return plantType.Type;
         }
-        public string get_plant_phaseOne(PlantType planttype)
+        public string GetPlantPhaseOne(PlantType plantType)
         {
-            return planttype.PhaseOne;
+            return plantType.PhaseOne;
         }
-        public string get_plant_phaseTwo(PlantType planttype)
+        public string GetPlantPhaseTwo(PlantType plantType)
         {
-            return planttype.PhaseTwo;
+            return plantType.PhaseTwo;
         }
-        public string get_plant_phaseThree(PlantType planttype)
+        public string GetPlantPhaseThree(PlantType plantType)
         {
-            return planttype.PhaseThree;
+            return plantType.PhaseThree;
         }
-        public string get_plant_phaseFour(PlantType planttype)
+        public string GetPlantPhaseFour(PlantType plantType)
         {
-            return planttype.PhaseFour;
+            return plantType.PhaseFour;
         }
     }
 }
