@@ -12,23 +12,63 @@ namespace Test
     [TestClass]
     public class DomainTest
     {
-        static DateTime date;
-        Picture pictureTest;
+        
 
         [TestInitialize]
         public void DomainTestInitialize()
         {
-           
-           
+            
+
         }
 
         
+        //PlantType Test
+        [TestMethod]
+        public void PlantType_Constructor()
+        {
+            PlantType p = new PlantType(1, "Rose", "14", "25", "30", "20");
+        }
+        [TestMethod]
+        public void PlantType_Can_Get_Properties()
+        {
+            PlantType p = new PlantType(1, "Rose", "14", "25", "30", "20");
+
+            Assert.AreEqual(1, p.PlantNumber);
+            Assert.AreEqual("Rose", p.Type);
+            Assert.AreEqual("14", p.PhaseOne);
+            Assert.AreEqual("25", p.PhaseTwo);
+            Assert.AreEqual("30", p.PhaseThree);
+            Assert.AreEqual("20", p.PhaseFour);
+        }
+        //PictureStatus Test
+        [TestMethod]
+        public void PictureStatus_Does_Have_All_Statuses()
+        {
+            PictureStatus pictureStatus = PictureStatus.Dead;
+            pictureStatus = PictureStatus.ExceptionalGrowth;
+            pictureStatus = PictureStatus.NoGrowth;
+            pictureStatus = PictureStatus.NormalGrowth;
+            pictureStatus = PictureStatus.SomeGrowth;
+
+            Assert.IsNotNull(pictureStatus);
+        }
         //Picture Test
         [TestMethod]
-        public void TestPictureFindStatus()
+        public void Picture_Constructor()
         {
-            PictureStatus stat = pictureTest.FindStatus("2");
-            Assert.AreEqual(PictureStatus.NormalGrowth, stat);
+            Picture p = new Picture(1, DateTime.Now, "God", "Dead", @"c:\12-12-2019 00:11:12.png", 1);
+        }
+        [TestMethod]
+        public void Picture_Can_Get_Properties()
+        {
+            Picture p = new Picture(1, DateTime.Now, "God", "Dead", @"c:\12-12-2019 00:11:12.png", 1);
+
+            Assert.AreEqual(1, p.PictureNumber);
+            Assert.AreEqual(DateTime.Now, p.Name);
+            Assert.AreEqual("God", p.Comment);
+            Assert.AreEqual(PictureStatus.Dead, p.Status);
+            Assert.AreEqual(@"c:\12-12-2019 00:11:12.png", p.PictureLink);
+            Assert.AreEqual(1, p.TrayNumber);
         }
     }
 }

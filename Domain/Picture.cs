@@ -25,23 +25,7 @@ namespace GruppeA2.Domain
             PictureLink = pictureLink;
             TrayNumber = tray;
         }
-        public Picture(DateTime name, PictureStatus status, int traynumber)
-        {
-            Name = name;
-            Status = status;
-            TrayNumber = traynumber;
-        }
-        public Picture(DateTime name, string comment, int traynumber)
-        {
-            Name = name;
-            Comment = comment;
-            TrayNumber = traynumber;
-        }
-        public Picture(DateTime name, int traynumber)
-        {
-            Name = name;
-            TrayNumber = traynumber;
-        }
+        
         public void ChangePictureNumber(int number) => this.PictureNumber = number;
 
         public void ChangePictureLink(string link)
