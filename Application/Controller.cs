@@ -11,7 +11,6 @@ namespace GruppeA2.Application
     {
         private AddDBController ADBC = new AddDBController();
         private GetDBController GDBC = new GetDBController();
-        public Batch activeBatch = new Batch(1,1,new DateTime(2019,05,20),new DateTime(2019,05,23));
 
         public Controller()
         {
@@ -19,7 +18,7 @@ namespace GruppeA2.Application
         }
 
         
-        public int GetPictureStatusInActiveBranch(int pictureIndex) => activeBatch.CurrentDay.PictureRepo[pictureIndex].FindStatus(pictureIndex);
+      
         public void UpdatePictures()
         {
 

@@ -21,11 +21,11 @@ namespace GruppeA2.Domain
             PictureNumber = pictureNumber;
             Name = name;
             Comment = comment;
-            Status = FindStatus(status);
+            Status = ConvertStringStatusToEnumStatus(status);
             PictureLink = pictureLink;
             TrayNumber = tray;
         }        
-        public PictureStatus FindStatus(string status)
+        public static PictureStatus ConvertStringStatusToEnumStatus(string status)
         {
             PictureStatus stat;
             if (status == "")

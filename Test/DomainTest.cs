@@ -71,7 +71,7 @@ namespace Test
             Assert.AreEqual(1, p.TrayNumber);
         }
         [TestMethod]
-        public void MyTestMethod()
+        public void Picture_Convert()
         {
 
         }
