@@ -118,7 +118,7 @@ namespace GUI
             //}
         }
 
-        private void DeltePictre_Click(object sender, RoutedEventArgs e)
+        private void DeletePictre_Click(object sender, RoutedEventArgs e)
         {
             int pictureId = CheckedIndex;
             mainWindow.controller.delete_picture(pictureId);

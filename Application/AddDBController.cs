@@ -11,7 +11,7 @@ namespace GruppeA2.Application
 {
     class AddDBController : DBController
     {
-        public void new_batch(int phase, DateTime start_date, DateTime end_date, int plantId)
+        public void NewBatch(int phase, DateTime startDate, DateTime endDate, int plantId)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -23,8 +23,8 @@ namespace GruppeA2.Application
                     SqlCommand cmd = new SqlCommand("sp_NewBatch", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@phase", phase));
-                    cmd.Parameters.Add(new SqlParameter("@startDate", start_date));
-                    cmd.Parameters.Add(new SqlParameter("@endDate", end_date));
+                    cmd.Parameters.Add(new SqlParameter("@startDate", startDate));
+                    cmd.Parameters.Add(new SqlParameter("@endDate", endDate));
                     cmd.Parameters.Add(new SqlParameter("@plantId", plantId));
                     cmd.ExecuteNonQuery();
 
@@ -50,7 +50,7 @@ namespace GruppeA2.Application
 
 
                     //Create the number of days
-                    int days = ((TimeSpan)(end_date - start_date)).Days + 1;
+                    int days = ((TimeSpan)(endDate - startDate)).Days + 1;
 
                     
                     for (int i = 0; i < days; i++)
@@ -58,7 +58,7 @@ namespace GruppeA2.Application
                         cmd = new SqlCommand("sp_CreateDay", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add(new SqlParameter("@DayNr", i + 1));
-                        cmd.Parameters.Add(new SqlParameter("@Date", start_date.AddDays(i)));
+                        cmd.Parameters.Add(new SqlParameter("@Date", startDate.AddDays(i)));
                         cmd.Parameters.Add(new SqlParameter("@BatchNr", batchNr));
                         cmd.ExecuteNonQuery();
                     }
@@ -70,7 +70,7 @@ namespace GruppeA2.Application
                 }
             }
         }
-        public void save_picture(string comment, string status,int pictureId)
+        public void SavePicture(string comment, string status,int pictureId)
         {
             using(SqlConnection con = new SqlConnection(ConnectionString))
             {
@@ -92,7 +92,7 @@ namespace GruppeA2.Application
                 }
             }
         }
-        public void delete_picture(int pictureId)
+        public void DeletePicture(int pictureId)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {

@@ -28,6 +28,8 @@ namespace GruppeA2.Domain
             }
            
         }
+
+     
         public Batch(int productionNUmber, int phase, DateTime startDate, DateTime endDate)
         {
             ProductionNumber = productionNUmber;
