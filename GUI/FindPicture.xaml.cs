@@ -24,10 +24,12 @@ namespace GUI
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
         private NewPicturesRepo pictureRepo;
+        private BatchRepo batchRepo;
         public FindPicture(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
+            batchRepo = mainWindow.controller.GetAllBatches();
         }
         private void UpdatePictures(NewPicturesRepo pictureRepo)
         {

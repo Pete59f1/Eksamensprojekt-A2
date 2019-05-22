@@ -40,6 +40,10 @@ namespace GruppeA2.Application
         {
             return GDBC.GetPicturesWithNoCommentAndStatus();
         }
+        public BatchRepo GetAllBatches()
+        {
+            return GDBC.GetAllBatches();
+        }
         public void new_batch(int phase, DateTime start_date, DateTime end_date, int plantId)
         {
             ADBC.NewBatch(phase, start_date, end_date, plantId);
