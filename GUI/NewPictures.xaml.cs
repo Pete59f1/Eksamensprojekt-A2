@@ -25,14 +25,19 @@ namespace GUI
         private RadioButton CheckedRadioButton { get; set; }
         private NewPicturesRepo pictureRepo;
         
-        public NewPictures(MainWindow mainWindow)
+        public NewPictures(MainWindow mainWindow,bool previous)
         {
-            
+            bool fromMainWindow = previous;
             this.mainWindow = mainWindow;
             InitializeComponent();
             UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
-            pictureRepo = mainWindow.controller.GetPicturesWithNoCommentAndStatus();
+            if (fromMainWindow == true) {
+                pictureRepo = mainWindow.controller.GetPicturesWithNoCommentAndStatus();
+            }
+            else
+            {
 
+            }
 
         }
         
