@@ -18,7 +18,7 @@ namespace Test
         [TestInitialize]
         public void DomainTestInitialize()
         {
-            date = new DateTime(2019 - 01 - 01, 11, 32);
+           
            
         }
 
