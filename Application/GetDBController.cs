@@ -138,7 +138,7 @@ namespace GruppeA2.Application
             }
         }
 
-        public List<Day> GetAllDaysFromBatchId(int batchNr)
+        private List<Day> GetAllDaysFromBatchId(int batchNr)
         {
             List<Day> days = new List<Day>();
             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -176,7 +176,7 @@ namespace GruppeA2.Application
             }
         }
 
-        public List<Picture> GetAllPicturesFromDayId(int dayId)
+        private List<Picture> GetAllPicturesFromDayId(int dayId)
         {
             List<Picture> pictures = new List<Picture>();
             using (SqlConnection con = new SqlConnection(ConnectionString))
