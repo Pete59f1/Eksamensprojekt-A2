@@ -26,12 +26,12 @@ namespace GruppeA2.Application
         }
         public void save_picture(string comment, string status, int pictureId)
         {
-            ADBC.save_picture(comment, status, pictureId);
+            ADBC.SavePicture(comment, status, pictureId);
             
         }
         public void delete_picture(int pictureId)
         {
-            ADBC.delete_picture(pictureId);
+            ADBC.DeletePicture(pictureId);
         }
         public PlantTypeRepo GetAllPlantType()
         {
@@ -43,7 +43,7 @@ namespace GruppeA2.Application
         }
         public void new_batch(int phase, DateTime start_date, DateTime end_date, int plantId)
         {
-            ADBC.new_batch(phase, start_date, end_date, plantId);
+            ADBC.NewBatch(phase, start_date, end_date, plantId);
         }
     }
 }

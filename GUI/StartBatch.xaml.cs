@@ -76,14 +76,14 @@ namespace GUI
         {
             if (cb_Phase.SelectedItem != null && cb_PlantType.SelectedItem != null)
             {
-                string chosen_type = cb_PlantType.SelectedItem.ToString();
+                string chosenType = cb_PlantType.SelectedItem.ToString();
                 int chosen_phase = int.Parse(cb_Phase.SelectedItem.ToString().Substring(8, 2));
                 int phase = cb_Phase.SelectedIndex + 1;
                 int plantId = 0;
 
                 for (int i = 0; i < plants.Count; i++)
                 {
-                    if (chosen_type == plants.get_plant_type(plants.GetItem(i)))
+                    if (chosenType == plants.get_plant_type(plants.GetItem(i)))
                     {
                         plantId = plants.get_plant_number(plants.GetItem(i));
                     }
