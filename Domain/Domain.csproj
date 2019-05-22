@@ -47,7 +47,6 @@
     <Compile Include="PlantType.cs" />
     <Compile Include="Batch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tray.cs" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\01-05-2019.png" />
