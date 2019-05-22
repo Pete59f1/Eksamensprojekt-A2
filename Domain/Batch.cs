@@ -13,7 +13,8 @@ namespace GruppeA2.Domain
         public int Phase { get; private set; }
         public DateTime StartDate { get; private set; }
         public DateTime EndDate { get; private set; }
-        public List<Day> DaysInProduction { get; private set; } = new List<Day>();
+        public int PlantId { get; private set; }
+        public List<Day> DaysInProduction { get; set; } = new List<Day>();
         public Day CurrentDay {
             get
             {
@@ -29,13 +30,13 @@ namespace GruppeA2.Domain
            
         }
 
-     
-        public Batch(int productionNUmber, int phase, DateTime startDate, DateTime endDate)
+        public Batch(int productionNUmber, int phase, DateTime startDate, DateTime endDate, int plantId)
         {
             ProductionNumber = productionNUmber;
             Phase = phase;
             StartDate = startDate;
             EndDate = endDate;
+            PlantId = plantId;
         }
 
         public void AddDay(Day day)

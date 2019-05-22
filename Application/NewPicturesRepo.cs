@@ -8,7 +8,7 @@ using GruppeA2.Domain;
 
 namespace GruppeA2.Application
 {
-    public class PictureRepo : Repo<Picture>
+    public class NewPicturesRepo : Repo<Picture>
     {
         public int GetPictureNumber(Picture pic)
         {

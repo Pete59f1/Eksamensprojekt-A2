@@ -8,24 +8,26 @@ namespace GruppeA2.Domain
 {
     public class Day
     {
+        public int DayId { get; private set; }
         public int DayNr { get; private set; }
         public DateTime Date { get; private set; }
 
-        public List<Picture> PictureRepo { get; private set; }
+        public List<Picture> PicturesFromThisDay { get; set; }
 
-        public Day(int dayNr, DateTime date)
+        public Day(int dayId, int dayNr, DateTime date)
         {
-            PictureRepo = new List<Picture>();
+            PicturesFromThisDay = new List<Picture>();
+            DayId = dayId;
             DayNr = dayNr;
             Date = date;
         }
-        public void AddPicture(Picture p) => PictureRepo.Add(p);
+        public void AddPicture(Picture p) => PicturesFromThisDay.Add(p);
 
         public Picture GetPicture() => throw new NotImplementedException();
 
         public void DeletePicture(int index)
         {
-            PictureRepo[index] = null;
+            PicturesFromThisDay[index] = null;
         }
 
     }
