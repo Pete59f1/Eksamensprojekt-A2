@@ -24,29 +24,7 @@ namespace GruppeA2.Domain
             Status = FindStatus(status);
             PictureLink = pictureLink;
             TrayNumber = tray;
-        }
-        
-        public void ChangePictureNumber(int number) => this.PictureNumber = number;
-
-        public void ChangePictureLink(string link)
-        {
-            PictureLink = link;
-        }
-
-        public int FindStatus(int pictureIndex)
-        {
-            return Convert.ToInt32(Status);
-        }
-
-        public void ChangePictureStatus(int status)
-        {
-             
-            Status = (PictureStatus)status;
-        }
-        public void ChangePictureComment(string comment)
-        {
-            Comment = comment;
-        }
+        }        
         public PictureStatus FindStatus(string status)
         {
             PictureStatus stat;

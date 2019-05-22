@@ -70,5 +70,10 @@ namespace Test
             Assert.AreEqual(@"c:\12-12-2019 00:11:12.png", p.PictureLink);
             Assert.AreEqual(1, p.TrayNumber);
         }
+        [TestMethod]
+        public void MyTestMethod()
+        {
+
+        }
     }
 }
