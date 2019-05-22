@@ -58,6 +58,23 @@ namespace Test
             Assert.IsFalse(p.RepoCollection.Contains(new PlantType(1, "Rose", "15", "20", "25", "20")));
         }
         //NewPicturesRepo Test
+        [TestMethod]
+        public void NewPicturesRepo_Constructor()
+        {
+            NewPicturesRepo newPictures = new NewPicturesRepo();
 
+        }
+        [TestMethod]
+        public void NewPicturesRepo_Can_Add_Item()
+        {
+            NewPicturesRepo newPictures = new NewPicturesRepo();
+            newPictures.AddItem(new Picture(1, new DateTime(2019, 01, 01, 24, 24, 24), "God", PictureStatus.SomeGrowth, @"c:\2019-01-01 24:24:24.png", 1));
+
+        }
+        [TestMethod]
+        public void NewPicturesRepo_Can_Get_Item()
+        {
+            Assert.Fail();
+        }
     }
 }
