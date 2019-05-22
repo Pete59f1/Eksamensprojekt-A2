@@ -22,20 +22,20 @@ namespace GruppeA2.Application
         {
             RepoCollection = new List<T>();
         }
-        public void AddItem(T number)
+        public void AddItem(T index)
         {
-            RepoCollection.Add(number);
+            RepoCollection.Add(index);
         }
-        public void RemoveItem(int number)
+        public void RemoveItem(int index)
         {
-            RepoCollection.RemoveAt(number);
+            RepoCollection.RemoveAt(index);
         }
-        public T GetItem(int number)
+        public T GetItem(int index)
         {
             T item = RepoCollection[0];
             for (int i = 0; i < RepoCollection.Count; i++)
             {
-                if (i.Equals(number))
+                if (i.Equals(index))
                 {
                     item = RepoCollection[i];
                 }

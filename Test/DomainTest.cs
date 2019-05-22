@@ -13,15 +13,6 @@ namespace Test
     public class DomainTest
     {
         
-
-        [TestInitialize]
-        public void DomainTestInitialize()
-        {
-            
-
-        }
-
-        
         //PlantType Test
         [TestMethod]
         public void PlantType_Constructor()

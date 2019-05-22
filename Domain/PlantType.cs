@@ -25,5 +25,24 @@ namespace GruppeA2.Domain
             PhaseThree = phaseThree;
             PhaseFour = phaseFour;
         }
+        public override bool Equals(object obj)
+        {
+            PlantType p;
+            if (obj is PlantType)
+            {
+                p = obj as PlantType;
+                if (p.Type == this.Type && p.PlantNumber == this.PlantNumber   )
+                {
+                    return true;
+                }
+                return false;
+            }
+            else
+            {
+                return false;
+                throw new Exception("The Object you want to compare is not a PlantType");
+            }
+            
+        }
     }
 }

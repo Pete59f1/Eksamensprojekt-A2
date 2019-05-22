@@ -31,7 +31,7 @@ namespace GUI
             plants = con.GetAllPlantType();
             for (int i = 0;i < plants.Count; i++)
             {
-                cb_PlantType.Items.Add(plants.GetPlantType(plants.GetItem(i)));
+                cb_PlantType.Items.Add(plants.GetPlantType(i));
             }
         }
 
@@ -50,11 +50,11 @@ namespace GUI
 
             for (int i = 0; i < plants.Count; i++)
             {
-                if(chosen_type == plants.GetPlantType(plants.GetItem(i))){
-                    cb_Phase.Items.Add("Fase 1: " + plants.GetPlantPhaseOne(plants.GetItem(i))+ " dage");
-                    cb_Phase.Items.Add("Fase 2: " + plants.GetPlantPhaseTwo(plants.GetItem(i)) + " dage");
-                    cb_Phase.Items.Add("Fase 3: " + plants.GetPlantPhaseThree(plants.GetItem(i)) + " dage");
-                    cb_Phase.Items.Add("Fase 4: " + plants.GetPlantPhaseFour(plants.GetItem(i)) + " dage");
+                if(chosen_type == plants.GetPlantType(i)){
+                    cb_Phase.Items.Add("Fase 1: " + plants.GetPlantPhaseOne(i)+ " dage");
+                    cb_Phase.Items.Add("Fase 2: " + plants.GetPlantPhaseTwo(i) + " dage");
+                    cb_Phase.Items.Add("Fase 3: " + plants.GetPlantPhaseThree(i) + " dage");
+                    cb_Phase.Items.Add("Fase 4: " + plants.GetPlantPhaseFour(i) + " dage");
                 }
             }
 
@@ -83,9 +83,9 @@ namespace GUI
 
                 for (int i = 0; i < plants.Count; i++)
                 {
-                    if (chosenType == plants.GetPlantType(plants.GetItem(i)))
+                    if (chosenType == plants.GetPlantType(i))
                     {
-                        plantId = plants.GetPlantNumber(plants.GetItem(i));
+                        plantId = plants.GetPlantNumber(i);
                     }
                 }
 
