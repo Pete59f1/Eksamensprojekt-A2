@@ -23,40 +23,24 @@ namespace GUI
         private MainWindow mainWindow;
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
+        private PictureRepo pictureRepo;
         
-        private PictureRepo newPictures;
         public NewPictures(MainWindow mainWindow)
         {
             
             this.mainWindow = mainWindow;
             InitializeComponent();
-            UpdatePictures();
-            
+            UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
+            pictureRepo = mainWindow.controller.GetPicturesWithNoCommentAndStatus();
+
+
         }
         
-        private void UpdatePictures()
+        private void UpdatePictures(PictureRepo pictureRepo)
         {
-            newPictures = mainWindow.controller.GetPicturesWithNoCommentAndStatus();
-            //foreach (GruppeA2.Domain.Picture picture in mainWindow.controller.activeBatch.CurrentDay.PictureRepo)
-            //{
+           
 
-
-            //    RadioButton radioBtn = new RadioButton
-            //    {
-            //        Margin = new Thickness(2, 10, 2, 10),
-            //        Height = 100,
-            //        HorizontalAlignment = HorizontalAlignment.Center,
-            //        VerticalAlignment = VerticalAlignment.Top,
-            //        Content = new Image { Source = new BitmapImage(new Uri(picture.PictureLink, UriKind.Relative)) },
-            //        Name = "_" + picture.PictureNumber.ToString()
-            //    };
-            //    radioBtn.Checked += this.Radio_Checked;
-            //    WP_mainWrapPanel.Children.Add(radioBtn);
-
-
-            //}
-
-            for(int i = 0; i < newPictures.Count; i++)
+            for(int i = 0; i < pictureRepo.Count; i++)
             {
 
 
@@ -66,8 +50,8 @@ namespace GUI
                     Height = 100,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Top,
-                    Content = new Image { Source = new BitmapImage(new Uri(newPictures.GetPictureLink(newPictures.GetItem(i)), UriKind.Relative)) },
-                    Name = "_" + newPictures.GetPictureNumber(newPictures.GetItem(i))
+                    Content = new Image { Source = new BitmapImage(new Uri(pictureRepo.GetPictureLink(pictureRepo.GetItem(i)), UriKind.Relative)) },
+                    Name = "_" + pictureRepo.GetPictureNumber(pictureRepo.GetItem(i))
                 };
                 radioBtn.Checked += this.Radio_Checked;
                 WP_mainWrapPanel.Children.Add(radioBtn);
@@ -75,10 +59,11 @@ namespace GUI
         }
         private void Radio_Checked(object sender, EventArgs e)
         {
+            
             CheckedRadioButton = sender as RadioButton;
             CheckedIndex = Convert.ToInt32(CheckedRadioButton.Name.Substring(1));
-            tb_Comment.Text = newPictures.GetPictureComment(CheckedIndex);
-            cb_Growth.SelectedIndex = newPictures.GetPictureStatus(CheckedIndex);
+            tb_Comment.Text = pictureRepo.GetPictureComment(CheckedIndex);
+            cb_Growth.SelectedIndex = pictureRepo.GetPictureStatus(CheckedIndex);
         }
 
 
@@ -105,7 +90,7 @@ namespace GUI
         private void NewPictures_VisibilityChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             WP_mainWrapPanel.Children.Clear();
-            UpdatePictures();
+            UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
 
         }
 
@@ -118,7 +103,7 @@ namespace GUI
             int pictureId = CheckedIndex;
             mainWindow.controller.save_picture(comment, status, pictureId);
             WP_mainWrapPanel.Children.Clear();
-            UpdatePictures();
+            UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
                 //mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex].ChangePictureComment(tb_Comment.Text);
                 //mainWindow.controller.activeBatch.CurrentDay.PictureRepo[CheckedIndex].ChangePictureStatus(cb_Growth.SelectedIndex);
             //}
@@ -129,7 +114,7 @@ namespace GUI
             int pictureId = CheckedIndex;
             mainWindow.controller.delete_picture(pictureId);
             WP_mainWrapPanel.Children.Clear();
-            UpdatePictures();
+            UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
             //WP_mainWrapPanel.Children.Remove(CheckedRadioButton);
             //mainWindow.controller.activeBatch.CurrentDay.DeletePicture(CheckedIndex);
         }

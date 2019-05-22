@@ -29,9 +29,10 @@
             </Grid.RowDefinitions>
 
             <Button Grid.Row="5" x:Name="btn_back"  Content="Tilbage" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75"  Click="Back_Click"/>
-            <ComboBox Grid.Row="1" x:Name="cbb_TrayNr" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="0 0 0 45" SelectionChanged="TrayNr_SelectionChanged"/>
-
-            <Label Grid.Row="0" Content="Bakker Nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="0 30 0 0" />
+            <ComboBox Grid.Row="1" x:Name="cbb_BatchNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="0 0 0 45" SelectionChanged="BatchNumber_SelectionChanged"/>
+            <Label Grid.Row="1" Content="Dag nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="0 30 0 0" />
+            <ComboBox Grid.Row="2" x:Name="cbb_DayNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="0 0 0 45" SelectionChanged="DayNumber_SelectionChanged"/>
+            <Label Grid.Row="0" Content="Batch Nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="0 30 0 0" />
             <Button Name="btn_ViewPicture" Content="Se billede" HorizontalAlignment="Left" Margin="88,40,0,0" Grid.Row="4" VerticalAlignment="Top" Width="74" Click="Btn_ViewPicture_Click"/>
 
         </Grid>
@@ -39,46 +40,15 @@
         <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1 1 0 1">
             <ScrollViewer>
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0">
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Name="im_One" Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1">
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
-                        <Button  Margin="0 1 0 10" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <Image Source="/Domain;component/Images/01-05-2019.png"></Image>
-                        </Button>
 
-                    </StackPanel>
+                    <WrapPanel x:Name="WP_mainWrapPanel" Orientation="Horizontal" VerticalAlignment="top" >
 
 
+                    </WrapPanel>
 
                 </Grid>
             </ScrollViewer>
         </Border>
-
 
 
 
