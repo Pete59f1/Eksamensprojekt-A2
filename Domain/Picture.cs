@@ -16,12 +16,12 @@ namespace GruppeA2.Domain
         public int TrayNumber { get; private set; }
         public string PictureLink { get; private set; } = "/Domain;component/Images/01-05-2019.png";
 
-        public Picture(int pictureNumber, DateTime name, string comment, string status, string pictureLink, int tray)
+        public Picture(int pictureNumber, DateTime name, string comment, PictureStatus status, string pictureLink, int tray)
         {
             PictureNumber = pictureNumber;
             Name = name;
             Comment = comment;
-            Status = ConvertStringStatusToEnumStatus(status);
+            Status = status;
             PictureLink = pictureLink;
             TrayNumber = tray;
         }        
