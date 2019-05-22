@@ -53,7 +53,6 @@ namespace GruppeA2.Application
                     int days = ((TimeSpan)(end_date - start_date)).Days + 1;
 
                     
-
                     for (int i = 0; i < days; i++)
                     {
                         cmd = new SqlCommand("sp_CreateDay", con);
