@@ -56,15 +56,15 @@ namespace Test
         [TestMethod]
         public void Picture_Constructor()
         {
-            Picture p = new Picture(1, DateTime.Now, "God", "Dead", @"c:\12-12-2019 00:11:12.png", 1);
+            Picture p = new Picture(1, DateTime.Now, "God", PictureStatus.Dead, @"c:\12-12-2019 00:11:12.png", 1);
         }
         [TestMethod]
         public void Picture_Can_Get_Properties()
         {
-            Picture p = new Picture(1, DateTime.Now, "God", "Dead", @"c:\12-12-2019 00:11:12.png", 1);
+            Picture p = new Picture(1, new DateTime(2019,01,01,01,01,01), "God", PictureStatus.Dead, @"c:\12-12-2019 00:11:12.png", 1);
 
             Assert.AreEqual(1, p.PictureNumber);
-            Assert.AreEqual(DateTime.Now, p.Name);
+            Assert.AreEqual(new DateTime(2019, 01, 01, 01, 01, 01), p.Name);
             Assert.AreEqual("God", p.Comment);
             Assert.AreEqual(PictureStatus.Dead, p.Status);
             Assert.AreEqual(@"c:\12-12-2019 00:11:12.png", p.PictureLink);
