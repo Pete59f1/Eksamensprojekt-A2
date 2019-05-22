@@ -65,9 +65,7 @@ namespace GruppeA2.Domain
         }
         public PictureStatus FindStatus(string status)
         {
-
             PictureStatus stat;
-                
             if (status == "")
             {
                 stat = PictureStatus.unset;
