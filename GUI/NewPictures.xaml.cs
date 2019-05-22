@@ -83,11 +83,11 @@ namespace GUI
             viewPicture.Show();
         }
 
-        //private void NewPictures_VisibilityChanged(object sender, DependencyPropertyChangedEventArgs e)
-        //{
-        //    WP_mainWrapPanel.Children.Clear();
-        //    UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
-        //}
+        private void NewPictures_VisibilityChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            WP_mainWrapPanel.Children.Clear();
+            UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
+        }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
