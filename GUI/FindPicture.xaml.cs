@@ -55,7 +55,9 @@ namespace GUI
             this.Visibility = Visibility.Hidden;
             int batchNr = int.Parse(cbb_BatchNumber.SelectedItem.ToString());
             int dayNr = int.Parse(cbb_DayNumber.SelectedItem.ToString());
-            NewPictures newPictures = new NewPictures(this, batchNr, dayNr);
+            BatchRepo chosen = GetChosenBatch(batchNr, dayNr);
+            chosen.AddPictureDataFromDayId(batchNr, dayNr);
+            NewPictures newPictures = new NewPictures(this, chosen);
             newPictures.Show();
         }
 
@@ -69,6 +71,20 @@ namespace GUI
             {
                 cbb_DayNumber.Items.Add(day);
             }
+        }
+
+        private BatchRepo GetChosenBatch(int batchNr, int dayNr)
+        {
+            BatchRepo chosen = new BatchRepo();
+            for (int i = 0; i < batchRepo.Count; i++)
+            {
+                if (batchRepo.GetProductionNumberByIndex(i).Equals(batchNr))
+                {
+                    chosen.AddItem(batchRepo.GetItem(i));
+                    chosen.DeleteAllDaysButChosen(batchNr, dayNr);
+                }
+            }
+            return chosen;
         }
     }
 }

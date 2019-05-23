@@ -44,5 +44,9 @@ namespace GruppeA2.Application
         {
             ADBC.NewBatch(phase, start_date, end_date, plantId);
         }
+        public List<Picture> GetAllPicturesFromDayId(int dayId)
+        {
+            return GDBC.GetAllPicturesFromDayId(dayId);
+        }
     }
 }

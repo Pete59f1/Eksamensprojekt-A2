@@ -22,6 +22,7 @@ namespace GUI
     {
         private Controller controller;
         private Window previousWindow;
+        private BatchRepo chosenBatch;
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
         
@@ -30,16 +31,16 @@ namespace GUI
             this.previousWindow = previousWindow;
             controller = new Controller();
             InitializeComponent();
-            UpdatePictures(controller.GetPicturesWithNoCommentAndStatus());
+            LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
         }
-        public NewPictures(Window previousWindow, int batchNr, int dayNr)
+        public NewPictures(Window previousWindow, BatchRepo chosenBatch)
         {
             this.previousWindow = previousWindow;
+            this.chosenBatch = chosenBatch;
             InitializeComponent();
-            tb_Comment.Text = batchNr.ToString();
         }
 
-        private void UpdatePictures(NewPicturesRepo pictureRepo)
+        private void LoadNewPicturesRepo(NewPicturesRepo pictureRepo)
         {
             for(int i = 0; i < pictureRepo.Count; i++)
             {
@@ -56,6 +57,26 @@ namespace GUI
                 WP_mainWrapPanel.Children.Add(radioBtn);
             }
         }
+
+        private void LoadDataFromFindPicture(BatchRepo chosen)
+        {
+            
+            for (int i = 0; i < chosen.Count; i++)
+            {
+                RadioButton radioBtn = new RadioButton
+                {
+                    Margin = new Thickness(2, 10, 2, 10),
+                    Height = 100,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Top,
+                    //Content = new Image { Source = new BitmapImage(new Uri(chosen.GetPictureLinkByIndex(i), UriKind.Relative)) },
+                    //Name = "_" + chosen.GetPictureNumberByIndex(i)
+                };
+                radioBtn.Checked += this.Radio_Checked;
+                WP_mainWrapPanel.Children.Add(radioBtn);
+            }
+        }
+
         private void Radio_Checked(object sender, EventArgs e)
         {
             CheckedRadioButton = sender as RadioButton;
@@ -84,7 +105,7 @@ namespace GUI
             int pictureId = CheckedIndex;
             controller.save_picture(comment, status, pictureId);
             WP_mainWrapPanel.Children.Clear();
-            UpdatePictures(controller.GetPicturesWithNoCommentAndStatus());
+            LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
         }
 
         private void DeletePictre_Click(object sender, RoutedEventArgs e)
@@ -92,7 +113,7 @@ namespace GUI
             int pictureId = CheckedIndex;
             controller.delete_picture(pictureId);
             WP_mainWrapPanel.Children.Clear();
-            UpdatePictures(controller.GetPicturesWithNoCommentAndStatus());
+            LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
         }
     }
 }

@@ -176,7 +176,7 @@ namespace GruppeA2.Application
             }
         }
 
-        private List<Picture> GetAllPicturesFromDayId(int dayId)
+        public List<Picture> GetAllPicturesFromDayId(int dayId)
         {
             List<Picture> pictures = new List<Picture>();
             using (SqlConnection con = new SqlConnection(ConnectionString))
