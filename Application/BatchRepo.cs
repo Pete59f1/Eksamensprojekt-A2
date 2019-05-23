@@ -132,5 +132,30 @@ namespace GruppeA2.Application
             }
             return pictureNumber;
         }
+
+        public string GetPictureCommentByIndex(int batchNr, int dayNr, int index)
+        {
+            string pictureComment = "";
+            foreach (Batch batch in RepoCollection)
+            {
+                if (batch.ProductionNumber.Equals(batchNr))
+                {
+                    foreach (Day day in batch.DaysInProduction)
+                    {
+                        if (day.DayNr.Equals(dayNr))
+                        {
+                            for (int i = 0; i < day.PicturesFromThisDay.Count; i++)
+                            {
+                                if (i.Equals(index))
+                                {
+                                    pictureComment = day.PicturesFromThisDay[i].Comment;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return pictureComment;
+        }
     }
 }

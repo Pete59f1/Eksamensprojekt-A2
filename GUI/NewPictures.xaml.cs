@@ -77,7 +77,7 @@ namespace GUI
                     Content = new Image { Source = new BitmapImage(new Uri(chosen.GetPictureLinkByIndex(batchNr, dayNr, i), UriKind.Relative)) },
                     Name = "_" + chosen.GetPictureNumberByIndex(batchNr, dayNr, i)
                 };
-                radioBtn.Checked += this.Radio_Checked;
+                radioBtn.Checked += this.Radio_CheckedFindPicture;
                 WP_mainWrapPanel.Children.Add(radioBtn);
             }
         }
@@ -86,8 +86,13 @@ namespace GUI
         {
             CheckedRadioButton = sender as RadioButton;
             CheckedIndex = Convert.ToInt32(CheckedRadioButton.Name.Substring(1));
-            //tb_Comment.Text = pictureRepo.GetPictureCommentByIndex(CheckedIndex); Skal ikke hente comment og status på nye billeder
-            //cb_Growth.SelectedIndex = pictureRepo.GetPictureStatusByIndex(CheckedIndex);
+        }
+
+        private void Radio_CheckedFindPicture(object sender, EventArgs e)
+        {
+            CheckedRadioButton = sender as RadioButton;
+            CheckedIndex = Convert.ToInt32(CheckedRadioButton.Name.Substring(1));
+            tb_Comment.Text = chosenBatch.GetPictureCommentByIndex(batchNr, dayNr, CheckedIndex);
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
