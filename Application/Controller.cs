@@ -16,17 +16,13 @@ namespace GruppeA2.Application
         {
            
         }
-
-        
-      
         public void UpdatePictures()
         {
 
         }
         public void save_picture(string comment, string status, int pictureId)
         {
-            ADBC.SavePicture(comment, status, pictureId);
-            
+            CDBC.SavePicture(comment, status, pictureId);   
         }
         public void delete_picture(int pictureId)
         {
