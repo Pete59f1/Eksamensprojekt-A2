@@ -41,6 +41,7 @@ namespace GUI
             this.chosenBatch = chosenBatch;
             this.batchNr = batchNr;
             this.dayNr = dayNr;
+            controller = new Controller();
             InitializeComponent();
             LoadDataFromFindPicture(chosenBatch);
         }
@@ -114,16 +115,16 @@ namespace GUI
             string status = cb_Growth.Text;
             int pictureId = CheckedIndex;
             controller.save_picture(comment, status, pictureId);
-            WP_mainWrapPanel.Children.Clear();
-            LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
+            //WP_mainWrapPanel.Children.Clear();
+            //LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus()); Giver problemer når man gemmer fra findpicture
         }
 
         private void DeletePictre_Click(object sender, RoutedEventArgs e)
         {
             int pictureId = CheckedIndex;
             controller.delete_picture(pictureId);
-            WP_mainWrapPanel.Children.Clear();
-            LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
+            //WP_mainWrapPanel.Children.Clear();
+            //LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus()); Giver problemer når man gemmer fra findpicture
         }
     }
 }
