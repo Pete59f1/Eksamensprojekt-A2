@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Closing="NewPictures_Closing"
         Title="Billede Oversigt" Height="450" Width="800"
-        IsVisibleChanged="NewPictures_VisibilityChanged"
         
         ResizeMode="NoResize"
         >

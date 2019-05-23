@@ -20,21 +20,21 @@ namespace GUI
     /// </summary>
     public partial class NewPictures : Window
     {
-        private MainWindow mainWindow;
-        private FindPicture findPicture;
+        private Controller controller;
+        private Window previousWindow;
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
-        //private NewPicturesRepo pictureRepo;
         
-        public NewPictures(MainWindow mainWindow)
+        public NewPictures(Window previousWindow)
         {
-            this.mainWindow = mainWindow;
+            this.previousWindow = previousWindow;
+            controller = new Controller();
             InitializeComponent();
-            UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
+            UpdatePictures(controller.GetPicturesWithNoCommentAndStatus());
         }
-        public NewPictures(FindPicture findPicture, int batchNr, int dayNr)
+        public NewPictures(Window previousWindow, int batchNr, int dayNr)
         {
-            this.findPicture = findPicture; 
+            this.previousWindow = previousWindow;
             InitializeComponent();
             tb_Comment.Text = batchNr.ToString();
         }
@@ -64,15 +64,9 @@ namespace GUI
             //cb_Growth.SelectedIndex = pictureRepo.GetPictureStatusByIndex(CheckedIndex);
         }
 
-
-        private void NewPictures_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            mainWindow.Visibility = Visibility.Visible;
-        }
-
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.Visibility = Visibility.Visible;
+            previousWindow.Visibility = Visibility.Visible;
             this.Close();
         }
 
@@ -83,28 +77,22 @@ namespace GUI
             viewPicture.Show();
         }
 
-        private void NewPictures_VisibilityChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            WP_mainWrapPanel.Children.Clear();
-            UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
-        }
-
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             string comment = tb_Comment.Text;
             string status = cb_Growth.Text;
             int pictureId = CheckedIndex;
-            mainWindow.controller.save_picture(comment, status, pictureId);
+            controller.save_picture(comment, status, pictureId);
             WP_mainWrapPanel.Children.Clear();
-            UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
+            UpdatePictures(controller.GetPicturesWithNoCommentAndStatus());
         }
 
         private void DeletePictre_Click(object sender, RoutedEventArgs e)
         {
             int pictureId = CheckedIndex;
-            mainWindow.controller.delete_picture(pictureId);
+            controller.delete_picture(pictureId);
             WP_mainWrapPanel.Children.Clear();
-            UpdatePictures(mainWindow.controller.GetPicturesWithNoCommentAndStatus());
+            UpdatePictures(controller.GetPicturesWithNoCommentAndStatus());
         }
     }
 }

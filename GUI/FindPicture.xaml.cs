@@ -24,6 +24,7 @@ namespace GUI
         private int CheckedIndex { get; set; }
         private RadioButton CheckedRadioButton { get; set; }
         private BatchRepo batchRepo;
+
         public FindPicture(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
