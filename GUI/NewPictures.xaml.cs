@@ -20,6 +20,8 @@ namespace GUI
     /// </summary>
     public partial class NewPictures : Window
     {
+        private int batchNr;
+        private int dayNr;
         private Controller controller;
         private Window previousWindow;
         private BatchRepo chosenBatch;
@@ -33,11 +35,14 @@ namespace GUI
             InitializeComponent();
             LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
         }
-        public NewPictures(Window previousWindow, BatchRepo chosenBatch)
+        public NewPictures(Window previousWindow, BatchRepo chosenBatch, int batchNr, int dayNr)
         {
             this.previousWindow = previousWindow;
             this.chosenBatch = chosenBatch;
+            this.batchNr = batchNr;
+            this.dayNr = dayNr;
             InitializeComponent();
+            LoadDataFromFindPicture(chosenBatch);
         }
 
         private void LoadNewPicturesRepo(NewPicturesRepo pictureRepo)
@@ -69,8 +74,8 @@ namespace GUI
                     Height = 100,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Top,
-                    //Content = new Image { Source = new BitmapImage(new Uri(chosen.GetPictureLinkByIndex(i), UriKind.Relative)) },
-                    //Name = "_" + chosen.GetPictureNumberByIndex(i)
+                    Content = new Image { Source = new BitmapImage(new Uri(chosen.GetPictureLinkByIndex(batchNr, dayNr, i), UriKind.Relative)) },
+                    Name = "_" + chosen.GetPictureNumberByIndex(batchNr, dayNr, i)
                 };
                 radioBtn.Checked += this.Radio_Checked;
                 WP_mainWrapPanel.Children.Add(radioBtn);

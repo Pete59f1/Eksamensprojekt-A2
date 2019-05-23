@@ -83,16 +83,54 @@ namespace GruppeA2.Application
             }
         }
 
-        public string GetPictureLinkByIndex(Batch batch, int index)
+        public string GetPictureLinkByIndex(int batchNr, int dayNr, int index)
         {
             string pictureLink = "";
-            for (int i = 0; i < batch.DaysInProduction.Count; i++)
+            foreach (Batch batch in RepoCollection)
             {
-                if (i == index)
+                if (batch.ProductionNumber.Equals(batchNr))
                 {
-                    pictureLink = batch.DaysInProduction[i].PicturesFromThisDay[i].PictureLink;
+                    foreach (Day day in batch.DaysInProduction)
+                    {
+                        if (day.DayNr.Equals(dayNr))
+                        {
+                            for (int i = 0; i < day.PicturesFromThisDay.Count; i++)
+                            {
+                                if (i.Equals(index))
+                                {
+                                    pictureLink = day.PicturesFromThisDay[i].PictureLink;
+                                }
+                            }
+                        }
+                    }
                 }
             }
+            return pictureLink;
+        }
+
+        public int GetPictureNumberByIndex(int batchNr, int dayNr, int index)
+        {
+            int pictureNumber = 0;
+            foreach (Batch batch in RepoCollection)
+            {
+                if (batch.ProductionNumber.Equals(batchNr))
+                {
+                    foreach (Day day in batch.DaysInProduction)
+                    {
+                        if (day.DayNr.Equals(dayNr))
+                        {
+                            for (int i = 0; i < day.PicturesFromThisDay.Count; i++)
+                            {
+                                if (i.Equals(index))
+                                {
+                                    pictureNumber = day.PicturesFromThisDay[i].PictureNumber;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return pictureNumber;
         }
     }
 }

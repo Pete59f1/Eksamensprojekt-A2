@@ -57,7 +57,7 @@ namespace GUI
             int dayNr = int.Parse(cbb_DayNumber.SelectedItem.ToString());
             BatchRepo chosen = GetChosenBatch(batchNr, dayNr);
             chosen.AddPictureDataFromDayId(batchNr, dayNr);
-            NewPictures newPictures = new NewPictures(this, chosen);
+            NewPictures newPictures = new NewPictures(this, chosen, batchNr, dayNr);
             newPictures.Show();
         }
 
