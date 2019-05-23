@@ -8,11 +8,11 @@
         Title="Find Billeder" Height="450" Width="800"
         Closing="FindPicture_Closing" ResizeMode="NoResize">
     <Grid>
-        <Button x:Name="btn_back"  Content="Tilbage" HorizontalAlignment="Center" VerticalAlignment="Center" Width="74"  Click="Back_Click" Margin="686,370,34,31"/>
-            <ComboBox x:Name="cbb_BatchNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="322,80,352,319" SelectionChanged="Cbb_BatchNumber_SelectionChanged"/>
-            <Label Content="Dag nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="343,147,371,248" />
-            <ComboBox x:Name="cbb_DayNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="322,178,352,221"/>
-            <Label Grid.Row="0" Content="Batch Nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="333,39,371,356" />
-            <Button Name="btn_ViewPictures" Content="Se billeder" HorizontalAlignment="Left" Margin="349,254,0,0" VerticalAlignment="Top" Width="74" Click="Btn_ViewPictures_Click"/>
+        <Button x:Name="btn_back"  Content="Tilbage" HorizontalAlignment="Center" VerticalAlignment="Center" Width="101"  Click="Back_Click" Margin="659,364,34,31" Height="26"/>
+        <ComboBox x:Name="cbb_BatchNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="322,64,352,333" SelectionChanged="Cbb_BatchNumber_SelectionChanged" Height="24"/>
+        <Label Content="Dag nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="328,130,352,264" Height="27" Width="114" />
+        <ComboBox x:Name="cbb_DayNumber" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"  Margin="322,162,352,234" Height="25"/>
+        <Label Grid.Row="0" Content="Batch Nummer" HorizontalAlignment="center" VerticalAlignment="center" Margin="328,26,366,361"  Height="34" Width="100"/>
+        <Button Name="btn_ViewPictures" Content="Se billeder" HorizontalAlignment="Left" Margin="349,254,0,0" VerticalAlignment="Top" Width="74" Click="Btn_ViewPictures_Click"/>
     </Grid>
 </Window>
