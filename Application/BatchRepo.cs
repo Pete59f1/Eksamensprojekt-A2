@@ -38,11 +38,11 @@ namespace GruppeA2.Application
             {
                 if (batch.ProductionNumber.Equals(batchId))
                 {
-                    foreach (Day day in batch.DaysInProduction)
+                    for(int i = 0; i < batch.DaysInProduction.Count; i++)
                     {
-                        if (day.DayNr != dayNr)
+                        if (batch.DaysInProduction[i].DayNr != dayNr)
                         {
-                            batch.DaysInProduction.Remove(day);
+                            batch.DaysInProduction.Remove(batch.DaysInProduction[i]);
                         }
                     }
                 }
@@ -79,6 +79,18 @@ namespace GruppeA2.Application
                             day.PicturesFromThisDay = controller.GetAllPicturesFromDayId(day.DayId);
                         }
                     }
+                }
+            }
+        }
+
+        public string GetPictureLinkByIndex(Batch batch, int index)
+        {
+            string pictureLink = "";
+            for (int i = 0; i < batch.DaysInProduction.Count; i++)
+            {
+                if (i == index)
+                {
+                    pictureLink = batch.DaysInProduction[i].PicturesFromThisDay[i].PictureLink;
                 }
             }
         }
