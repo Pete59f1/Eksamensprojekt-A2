@@ -4,30 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GruppeA2.Domain;
-
+using System.Data;
+using System.Data.SqlClient;
 namespace GruppeA2.Application
 {
     class ChangeDBController : DBController
     {
-        public void ChangePictureLink(string link)
+        
+        public void DeletePicture(int pictureId)
         {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    con.Open();
 
-        }
-        public void ChangePictureStatus(PictureStatus pictureStatus)
-        {
+                    SqlCommand cmd = new SqlCommand("sp_DeletePicture", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@PicId", pictureId));
 
-        }
-        public void ChangePictureComment(string comment)
-        {
-
-        }
-        public void ChangeProductionAssessment(string assessment)
-        {
-
-        }
-        public void ChangeTrayStatus(int trayNumber, bool isInUse)
-        {
-
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
         }
     }
 }

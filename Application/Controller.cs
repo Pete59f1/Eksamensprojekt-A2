@@ -11,7 +11,7 @@ namespace GruppeA2.Application
     {
         private AddDBController ADBC = new AddDBController();
         private GetDBController GDBC = new GetDBController();
-
+        private ChangeDBController CDBC = new ChangeDBController();
         public Controller()
         {
            
@@ -30,7 +30,7 @@ namespace GruppeA2.Application
         }
         public void delete_picture(int pictureId)
         {
-            ADBC.DeletePicture(pictureId);
+            CDBC.DeletePicture(pictureId);
         }
         public PlantTypeRepo GetAllPlantType()
         {
