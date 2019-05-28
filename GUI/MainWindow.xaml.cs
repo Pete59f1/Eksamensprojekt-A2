@@ -25,7 +25,6 @@ namespace GUI
         public MainWindow()
         {
             controller = Controller.ControllerInstance;
-            DataContext = controller;
             InitializeComponent();
         }
 
@@ -40,12 +39,6 @@ namespace GUI
             this.Visibility = Visibility.Hidden;
             FindPicture findPicture = new FindPicture(this);
             findPicture.Show();
-        }
-        private void PictureArchive_Click(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Hidden;
-            Archive archive = new Archive(this);
-            archive.Show();
         }
 
         private void TerminateProgram_Click(object sender, RoutedEventArgs e)

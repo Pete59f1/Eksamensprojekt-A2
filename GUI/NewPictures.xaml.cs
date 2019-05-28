@@ -114,8 +114,10 @@ namespace GUI
             string comment = tb_Comment.Text;
             string status = cb_Growth.Text;
             int pictureId = CheckedIndex;
-            WP_mainWrapPanel.Children.Remove(CheckedRadioButton);
+            
             controller.save_picture(comment, status, pictureId);
+            WP_mainWrapPanel.Children.Clear();
+            LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
 
             //WP_mainWrapPanel.Children.Clear();
             //LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus()); Giver problemer når man gemmer fra findpicture
@@ -125,7 +127,9 @@ namespace GUI
         {
             int pictureId = CheckedIndex;
             controller.delete_picture(pictureId);
-            //WP_mainWrapPanel.Children.Clear();
+            WP_mainWrapPanel.Children.Clear();
+            LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
+            
             //LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus()); Giver problemer når man gemmer fra findpicture
         }
     }

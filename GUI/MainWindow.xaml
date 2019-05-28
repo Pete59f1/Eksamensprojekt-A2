@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Hoved Vindue" Height="359.5" Width="186" ResizeMode="NoResize">
+        Title="Hoved Vindue" Height="279.5" Width="186" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -16,31 +16,29 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
         <!--Labels-->
         <Label Grid.Row="0" Content="Nye Billeder" HorizontalAlignment="Center" />
         <Label Grid.Row="2" Content="Find Billeder" HorizontalAlignment="Center" />
-        <Label Grid.Row="4" Content="Billede Arkiv" HorizontalAlignment="Center" />
-        <Label Grid.Row="6" Content="Start batch" HorizontalAlignment="Center" />
-        <Label Grid.Row="8" Content="Luk Program" HorizontalAlignment="Center" />
+
+        <Label Grid.Row="4" Content="Start batch" HorizontalAlignment="Center" />
+        <Label Grid.Row="6" Content="Luk Program" HorizontalAlignment="Center" />
         <!--Buttons-->
         <Button x:Name="btn_NewPictures" Grid.Row="1" Content="Klik" HorizontalAlignment="Center" Width="100" Click="NewPictures_Click"/>
         <Button x:Name="btn_FindPicture" Grid.Row="3" Content="Klik" HorizontalAlignment="Center" Width="100" Click="FindPictures_Click"/>
-        <Button x:Name="btn_PictureArchive" Grid.Row="5" Content="Klik" HorizontalAlignment="Center" Width="100" Click="PictureArchive_Click"/>
-        <Button x:Name="btn_StartBatch" Grid.Row="7" Content="Klik" HorizontalAlignment="Center" Width="100" Click="StartBarch_Click" />
-        <Button x:Name="btn_TerminateProgram" Grid.Row="9" Content="Klik" HorizontalAlignment="Center" Width="100" Click="TerminateProgram_Click"/>
+        
+        <Button x:Name="btn_StartBatch" Grid.Row="5" Content="Klik" HorizontalAlignment="Center" Width="100" Click="StartBarch_Click" />
+        <Button x:Name="btn_TerminateProgram" Grid.Row="7" Content="Klik" HorizontalAlignment="Center" Width="100" Click="TerminateProgram_Click"/>
         <!--Borders-->
         <Border Grid.Row="0" BorderThickness="1 1 1 0" BorderBrush="Black" />
         <Border Grid.Row="1" BorderThickness="1 0 1 1" BorderBrush="Black" />
         <Border Grid.Row="2" BorderThickness="1 1 1 0" BorderBrush="Black" />
         <Border Grid.Row="3" BorderThickness="1 0 1 1" BorderBrush="Black" />
+
         <Border Grid.Row="4" BorderThickness="1 1 1 0" BorderBrush="Black" />
         <Border Grid.Row="5" BorderThickness="1 0 1 1" BorderBrush="Black" />
         <Border Grid.Row="6" BorderThickness="1 1 1 0" BorderBrush="Black" />
         <Border Grid.Row="7" BorderThickness="1 0 1 1" BorderBrush="Black" />
-        <Border Grid.Row="8" BorderThickness="1 1 1 0" BorderBrush="Black" />
-        <Border Grid.Row="9" BorderThickness="1 0 1 1" BorderBrush="Black" />
     </Grid>
 </Window>
