@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GruppeA2.Application
 {
-    public abstract class Repo<T> 
+    public abstract class Repo<T>
     {
         
         public List<T> RepoCollection { get; private set; }
@@ -22,6 +22,9 @@ namespace GruppeA2.Application
         {
             RepoCollection = new List<T>();
         }
+
+        
+
         public void AddItem(T item)
         {
             RepoCollection.Add(item);

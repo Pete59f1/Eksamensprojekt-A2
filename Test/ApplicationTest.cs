@@ -68,7 +68,7 @@ namespace Test
         public void NewPicturesRepo_Can_Add_Item()
         {
             NewPicturesRepo newPictures = new NewPicturesRepo();
-            newPictures.AddItem(new Picture(1, new DateTime(2019, 01, 01, 24, 24, 24), "God", PictureStatus.SomeGrowth, @"c:\2019-01-01 24:24:24.png", 1));
+            newPictures.AddItem(new Picture(1, new DateTime(2019, 01, 01), "God", PictureStatus.SomeGrowth, @"c:\2019-01-01 24:24:24.png", 1));
 
         }
         [TestMethod]

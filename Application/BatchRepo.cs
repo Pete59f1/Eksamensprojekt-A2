@@ -9,7 +9,7 @@ namespace GruppeA2.Application
 {
     public class BatchRepo : Repo<Batch>
     {
-        private Controller controller = new Controller();
+        private Controller controller = Controller.ControllerInstance;
 
         public int GetProductionNumberByIndex(int index) => RepoCollection[index].ProductionNumber;
         public int GetPhaseByIndex(int index) => RepoCollection[index].Phase;

@@ -31,7 +31,7 @@ namespace GUI
         public NewPictures(Window previousWindow)
         {
             this.previousWindow = previousWindow;
-            controller = new Controller();
+            controller=Controller.ControllerInstance;
             InitializeComponent();
             LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
         }
@@ -41,7 +41,7 @@ namespace GUI
             this.chosenBatch = chosenBatch;
             this.batchNr = batchNr;
             this.dayNr = dayNr;
-            controller = new Controller();
+            controller = Controller.ControllerInstance;
             InitializeComponent();
             LoadDataFromFindPicture(chosenBatch);
         }
@@ -114,7 +114,9 @@ namespace GUI
             string comment = tb_Comment.Text;
             string status = cb_Growth.Text;
             int pictureId = CheckedIndex;
+            WP_mainWrapPanel.Children.Remove(CheckedRadioButton);
             controller.save_picture(comment, status, pictureId);
+
             //WP_mainWrapPanel.Children.Clear();
             //LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus()); Giver problemer når man gemmer fra findpicture
         }

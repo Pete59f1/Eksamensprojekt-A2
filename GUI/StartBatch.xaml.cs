@@ -25,7 +25,7 @@ namespace GUI
         private MainWindow mainWindow;
         public StartBatch(MainWindow mainWindow)
         {
-            con = new Controller();
+            con = Controller.ControllerInstance;
             this.mainWindow = mainWindow;
             InitializeComponent();
             plants = con.GetAllPlantType();

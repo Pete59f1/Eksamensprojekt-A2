@@ -12,9 +12,27 @@ namespace GruppeA2.Application
         private AddDBController ADBC = new AddDBController();
         private GetDBController GDBC = new GetDBController();
         private ChangeDBController CDBC = new ChangeDBController();
-        public Controller()
+        private static Controller controller = null;
+        private static readonly object controllerLock = new object();
+        
+        public static Controller ControllerInstance
         {
-           
+            get
+            {
+                lock (controllerLock)
+                {
+                    if (controller == null)
+                    {
+                        controller = new Controller();
+                    }
+                    return controller;
+                }
+            }
+        }
+
+        private Controller()
+        {
+
         }
         public void UpdatePictures()
         {

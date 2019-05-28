@@ -24,7 +24,7 @@ namespace GUI
         internal Controller controller;
         public MainWindow()
         {
-            controller = new Controller();
+            controller = Controller.ControllerInstance;
             DataContext = controller;
             InitializeComponent();
         }

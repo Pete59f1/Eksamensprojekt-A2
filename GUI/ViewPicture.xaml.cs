@@ -20,14 +20,13 @@ namespace GUI
     public partial class ViewPicture : Window
     {
         private Controller con;
-        private MainWindow mainWindow;
         private int CheckedIndex { get; set; }
         private Window previousWindow;
         public Image ChoosenImage { get; set; }
 
         public ViewPicture(Window previousWindow, object choosenImage, int checkedIndex)
         {
-            con = new Controller();
+            con = Controller.ControllerInstance;
             InitializeComponent();
             ChoosenImage = choosenImage as Image;
             this.previousWindow = previousWindow;
