@@ -129,8 +129,10 @@ namespace GUI
             controller.delete_picture(pictureId);
             WP_mainWrapPanel.Children.Clear();
             LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
-            
-            //LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus()); Giver problemer når man gemmer fra findpicture
         }
+
+            //LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus()); Giver problemer når man gemmer fra findpicture
+        
+
     }
 }

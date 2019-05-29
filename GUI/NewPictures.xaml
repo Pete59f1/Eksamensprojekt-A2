@@ -60,7 +60,7 @@
             <ScrollViewer>
                 <Grid>
                     
-                    <WrapPanel x:Name="WP_mainWrapPanel" Orientation="Horizontal" VerticalAlignment="top" >
+                    <WrapPanel x:Name="WP_mainWrapPanel" Orientation="Horizontal" VerticalAlignment="top">
                         
                         
                     </WrapPanel>
