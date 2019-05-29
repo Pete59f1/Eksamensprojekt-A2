@@ -51,7 +51,7 @@
                     <ColumnDefinition Width="36*"/>
                     <ColumnDefinition Width="89*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" x:Name="btn_DeletePicture" Content="Slet Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Grid.ColumnSpan="2" Margin="12,49,13,49" Click="DeletePictre_Click" />
+                <Button Grid.Column="0" x:Name="btn_DeletePicture" Content="Slet Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Grid.ColumnSpan="2" Margin="12,49,13,49" Click="DeletePicture_Click" />
                 <Button x:Name="btn_Back" Grid.Column="2" Content="Tilbage" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Click="Back_Click" Margin="13,49,12,49" Grid.ColumnSpan="2"/>
             </Grid>
         </Grid>
