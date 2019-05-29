@@ -123,7 +123,7 @@ namespace GUI
             //LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus()); Giver problemer når man gemmer fra findpicture
         }
 
-        private void DeletePictre_Click(object sender, RoutedEventArgs e)
+        private void DeletePicture_Click(object sender, RoutedEventArgs e)
         {
             int pictureId = CheckedIndex;
             controller.delete_picture(pictureId);
