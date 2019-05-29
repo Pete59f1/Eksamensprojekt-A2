@@ -10,7 +10,7 @@ namespace GruppeA2.Application
 {
     public class NewPicturesRepo : Repo<Picture>
     {
-        public int GetPictureNumberByIndex(int index) => RepoCollection[index].PictureNumber;
+        public int GetPictureIdByIndex(int index) => RepoCollection[index].PictureId;
         public DateTime GetPictureNameByIndex(int index) => RepoCollection[index].Name;
         public string GetPictureCommentByIndex(int index) => RepoCollection[index].Comment;
         public int GetPictureStatusByIndex(int index) => Convert.ToInt32(RepoCollection[index].Status);

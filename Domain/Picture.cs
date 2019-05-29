@@ -9,16 +9,16 @@ namespace GruppeA2.Domain
     public class Picture
     {
 
-        public int PictureNumber { get; private set; }
+        public int PictureId { get; private set; }
         public DateTime Name { get; private set; }
         public string Comment { get; private set; }
         public PictureStatus Status { get; private set; }
         public int TrayNumber { get; private set; }
         public string PictureLink { get; private set; } = "/Domain;component/Images/01-05-2019.png";
 
-        public Picture(int pictureNumber, DateTime name, string comment, PictureStatus status, string pictureLink, int tray)
+        public Picture(int pictureId, DateTime name, string comment, PictureStatus status, string pictureLink, int tray)
         {
-            PictureNumber = pictureNumber;
+            PictureId = pictureId;
             Name = name;
             Comment = comment;
             Status = status;

@@ -11,7 +11,7 @@ namespace GruppeA2.Application
     {
         private Controller controller = Controller.ControllerInstance;
 
-        public int GetProductionNumberByIndex(int index) => RepoCollection[index].ProductionNumber;
+        public int GetBatchNrByIndex(int index) => RepoCollection[index].BatchNr;
         public int GetPhaseByIndex(int index) => RepoCollection[index].Phase;
         public DateTime GetStartDateByIndex(int index) => RepoCollection[index].StartDate;
         public DateTime GetEndDateByIndex(int index) => RepoCollection[index].EndDate;
@@ -21,7 +21,7 @@ namespace GruppeA2.Application
             List<int> days = new List<int>();
             foreach (Batch batch in RepoCollection)
             {
-                if (batch.ProductionNumber.Equals(batchId))
+                if (batch.BatchNr.Equals(batchId))
                 {
                     foreach (Day day in batch.DaysInProduction)
                     {
@@ -36,7 +36,7 @@ namespace GruppeA2.Application
         {
             foreach (Batch batch in RepoCollection)
             {
-                if (batch.ProductionNumber.Equals(batchId))
+                if (batch.BatchNr.Equals(batchId))
                 {
                     for(int i = 0; i < batch.DaysInProduction.Count; i++)
                     {
@@ -53,7 +53,7 @@ namespace GruppeA2.Application
             int dayId = 0;
             foreach (Batch batch in RepoCollection)
             {
-                if (batch.ProductionNumber.Equals(batchNr))
+                if (batch.BatchNr.Equals(batchNr))
                 {
                     foreach (Day day in batch.DaysInProduction)
                     {
@@ -70,7 +70,7 @@ namespace GruppeA2.Application
         {
             foreach (Batch batch in RepoCollection)
             {
-                if (batch.ProductionNumber.Equals(batchNr))
+                if (batch.BatchNr.Equals(batchNr))
                 {
                     foreach (Day day in batch.DaysInProduction)
                     {
@@ -88,7 +88,7 @@ namespace GruppeA2.Application
             string pictureLink = "";
             foreach (Batch batch in RepoCollection)
             {
-                if (batch.ProductionNumber.Equals(batchNr))
+                if (batch.BatchNr.Equals(batchNr))
                 {
                     foreach (Day day in batch.DaysInProduction)
                     {
@@ -108,12 +108,12 @@ namespace GruppeA2.Application
             return pictureLink;
         }
 
-        public int GetPictureNumberByIndex(int batchNr, int dayNr, int index)
+        public int GetPictureIdByIndex(int batchNr, int dayNr, int index)
         {
-            int pictureNumber = 0;
+            int pictureId = 0;
             foreach (Batch batch in RepoCollection)
             {
-                if (batch.ProductionNumber.Equals(batchNr))
+                if (batch.BatchNr.Equals(batchNr))
                 {
                     foreach (Day day in batch.DaysInProduction)
                     {
@@ -123,14 +123,14 @@ namespace GruppeA2.Application
                             {
                                 if (i.Equals(index))
                                 {
-                                    pictureNumber = day.PicturesFromThisDay[i].PictureNumber;
+                                    pictureId = day.PicturesFromThisDay[i].PictureId;
                                 }
                             }
                         }
                     }
                 }
             }
-            return pictureNumber;
+            return pictureId;
         }
 
         public string GetPictureCommentByIndex(int batchNr, int dayNr, int index)
@@ -138,7 +138,7 @@ namespace GruppeA2.Application
             string pictureComment = "";
             foreach (Batch batch in RepoCollection)
             {
-                if (batch.ProductionNumber.Equals(batchNr))
+                if (batch.BatchNr.Equals(batchNr))
                 {
                     foreach (Day day in batch.DaysInProduction)
                     {

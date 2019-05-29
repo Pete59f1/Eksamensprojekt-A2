@@ -125,7 +125,7 @@ namespace GruppeA2.Application
                             string plant = read["PlantId"].ToString();
                             int plantId = int.Parse(plant);
                             Batch batch = new Batch(batchNr, phase, startDate, endDate, plantId);
-                            batch.DaysInProduction = GetAllDaysFromBatchId(batchNr);
+                            batch.DaysInProduction = GetAllDaysFromBatchNr(batchNr);
                             Batches.AddItem(batch);
                         }
                     }
@@ -138,7 +138,7 @@ namespace GruppeA2.Application
             }
         }
 
-        private List<Day> GetAllDaysFromBatchId(int batchNr)
+        private List<Day> GetAllDaysFromBatchNr(int batchNr)
         {
             List<Day> days = new List<Day>();
             using (SqlConnection con = new SqlConnection(ConnectionString))

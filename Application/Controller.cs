@@ -30,14 +30,6 @@ namespace GruppeA2.Application
             }
         }
 
-        private Controller()
-        {
-
-        }
-        public void UpdatePictures()
-        {
-
-        }
         public void save_picture(string comment, string status, int pictureId)
         {
             CDBC.SavePicture(comment, status, pictureId);   

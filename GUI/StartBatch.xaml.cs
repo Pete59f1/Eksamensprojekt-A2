@@ -85,7 +85,7 @@ namespace GUI
                 {
                     if (chosenType == plants.GetPlantType(i))
                     {
-                        plantId = plants.GetPlantNumber(i);
+                        plantId = plants.GetPlantId(i);
                     }
                 }
 
