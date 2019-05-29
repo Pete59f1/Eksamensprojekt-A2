@@ -58,7 +58,5 @@ namespace GUI
             this.Close();
 
         }
-
-        
     }
 }

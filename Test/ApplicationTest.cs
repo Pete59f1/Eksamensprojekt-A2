@@ -40,7 +40,7 @@ namespace Test
             PlantTypeRepo p = new PlantTypeRepo();
             p.AddItem(new PlantType(1, "Rose", "15", "20", "25", "20"));
 
-            Assert.AreEqual(1, p.GetPlantNumber(0));
+            Assert.AreEqual(1, p.GetPlantId(0));
             Assert.AreEqual("Rose", p.GetPlantType(0));
             Assert.AreEqual("15", p.GetPlantPhaseOne(0));
             Assert.AreEqual("20", p.GetPlantPhaseTwo(0));

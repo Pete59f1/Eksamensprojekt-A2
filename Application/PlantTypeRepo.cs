@@ -9,7 +9,7 @@ namespace GruppeA2.Application
 {
     public class PlantTypeRepo : Repo<PlantType>
     {
-        public int GetPlantNumber(int index) => RepoCollection[index].PlantNumber;
+        public int GetPlantId(int index) => RepoCollection[index].PlantId;
 
         public string GetPlantType(int index) => RepoCollection[index].Type;
 
@@ -20,6 +20,5 @@ namespace GruppeA2.Application
         public string GetPlantPhaseThree(int index) => RepoCollection[index].PhaseThree;
 
         public string GetPlantPhaseFour(int index) => RepoCollection[index].PhaseFour;
-      
     }
 }

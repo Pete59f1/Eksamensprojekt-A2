@@ -46,7 +46,7 @@ namespace GUI
         {
             for (int i = 0; i < batchRepo.Count; i++)
             {
-                cbb_BatchNumber.Items.Add(batchRepo.GetProductionNumberByIndex(i));
+                cbb_BatchNumber.Items.Add(batchRepo.GetBatchNrByIndex(i));
             }
         }
 
@@ -78,7 +78,7 @@ namespace GUI
             BatchRepo chosen = new BatchRepo();
             for (int i = 0; i < batchRepo.Count; i++)
             {
-                if (batchRepo.GetProductionNumberByIndex(i).Equals(batchNr))
+                if (batchRepo.GetBatchNrByIndex(i).Equals(batchNr))
                 {
                     chosen.AddItem(batchRepo.GetItem(i));
                     chosen.DeleteAllDaysButChosen(batchNr, dayNr);

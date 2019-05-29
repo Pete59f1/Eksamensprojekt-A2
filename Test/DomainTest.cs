@@ -24,7 +24,7 @@ namespace Test
         {
             PlantType p = new PlantType(1, "Rose", "14", "25", "30", "20");
 
-            Assert.AreEqual(1, p.PlantNumber);
+            Assert.AreEqual(1, p.PlantId);
             Assert.AreEqual("Rose", p.Type);
             Assert.AreEqual("14", p.PhaseOne);
             Assert.AreEqual("25", p.PhaseTwo);
@@ -54,7 +54,7 @@ namespace Test
         {
             Picture p = new Picture(1, new DateTime(2019,01,01,01,01,01), "God", PictureStatus.Dead, @"c:\12-12-2019 00:11:12.png", 1);
 
-            Assert.AreEqual(1, p.PictureNumber);
+            Assert.AreEqual(1, p.PictureId);
             Assert.AreEqual(new DateTime(2019, 01, 01, 01, 01, 01), p.Name);
             Assert.AreEqual("God", p.Comment);
             Assert.AreEqual(PictureStatus.Dead, p.Status);

@@ -57,7 +57,7 @@ namespace GUI
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Top,
                     Content = new Image { Source = new BitmapImage(new Uri(pictureRepo.GetPictureLinkByIndex(i), UriKind.Relative)) },
-                    Name = "_" + pictureRepo.GetPictureNumberByIndex(i)
+                    Name = "_" + pictureRepo.GetPictureIdByIndex(i)
                 };
                 radioBtn.Checked += this.Radio_Checked;
                 WP_mainWrapPanel.Children.Add(radioBtn);
@@ -76,7 +76,7 @@ namespace GUI
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Top,
                     Content = new Image { Source = new BitmapImage(new Uri(chosen.GetPictureLinkByIndex(batchNr, dayNr, i), UriKind.Relative)) },
-                    Name = "_" + chosen.GetPictureNumberByIndex(batchNr, dayNr, i)
+                    Name = "_" + chosen.GetPictureIdByIndex(batchNr, dayNr, i)
                 };
                 radioBtn.Checked += this.Radio_CheckedFindPicture;
                 WP_mainWrapPanel.Children.Add(radioBtn);

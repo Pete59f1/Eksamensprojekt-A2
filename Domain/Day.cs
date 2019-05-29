@@ -21,14 +21,5 @@ namespace GruppeA2.Domain
             DayNr = dayNr;
             Date = date;
         }
-        public void AddPicture(Picture p) => PicturesFromThisDay.Add(p);
-
-        public Picture GetPicture() => throw new NotImplementedException();
-
-        public void DeletePicture(int index)
-        {
-            PicturesFromThisDay[index] = null;
-        }
-
     }
 }
