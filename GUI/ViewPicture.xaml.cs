@@ -34,26 +34,26 @@ namespace GUI
             CheckedIndex = checkedIndex;
         }
 
-        private void Btn_Back_Click(object sender, RoutedEventArgs e)
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
             previousWindow.Visibility = Visibility.Visible;
             this.Close();
         }
 
-        private void Btn_Save_Click(object sender, RoutedEventArgs e)
+        private void Save_Click(object sender, RoutedEventArgs e)
         {
-            string comment = tb_comment.Text;
+            string comment = tb_Comment.Text;
             string status = cb_Status.Text;
             int pictureId = CheckedIndex;
-            con.save_picture(comment, status, pictureId);
+            con.SavePicture(comment, status, pictureId);
             previousWindow.Visibility = Visibility.Visible;
             this.Close();
         }
 
-        private void Btn_delete_Click(object sender, RoutedEventArgs e)
+        private void Delete_Click(object sender, RoutedEventArgs e)
         {
             
-            con.delete_picture(CheckedIndex);
+            con.DeletePicture(CheckedIndex);
             previousWindow.Visibility = Visibility.Visible;
             this.Close();
 

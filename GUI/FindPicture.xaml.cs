@@ -50,7 +50,7 @@ namespace GUI
             }
         }
 
-        private void Btn_ViewPictures_Click(object sender, RoutedEventArgs e)
+        private void ViewPictures_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
             int batchNr = int.Parse(cbb_BatchNumber.SelectedItem.ToString());
@@ -61,12 +61,12 @@ namespace GUI
             newPictures.Show();
         }
 
-        private void Cbb_BatchNumber_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BatchNumber_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             cbb_DayNumber.Items.Clear();
             cbb_DayNumber.SelectedIndex = -1;
             int chosenBatchNr = int.Parse(cbb_BatchNumber.SelectedItem.ToString());
-            List<int> days = batchRepo.GetDayNrByBatchId(chosenBatchNr);
+            List<int> days = batchRepo.GetDayNrByBatchNr(chosenBatchNr);
             foreach (int day in days)
             {
                 cbb_DayNumber.Items.Add(day);

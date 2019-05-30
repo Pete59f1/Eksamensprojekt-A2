@@ -34,11 +34,11 @@ namespace GruppeA2.Application
 
         }
 
-        public void save_picture(string comment, string status, int pictureId)
+        public void SavePicture(string comment, string status, int pictureId)
         {
             CDBC.SavePicture(comment, status, pictureId);   
         }
-        public void delete_picture(int pictureId)
+        public void DeletePicture(int pictureId)
         {
             CDBC.DeletePicture(pictureId);
         }
@@ -54,9 +54,9 @@ namespace GruppeA2.Application
         {
             return GDBC.GetAllBatches();
         }
-        public void new_batch(int phase, DateTime start_date, DateTime end_date, int plantId)
+        public void NewBatch(int phase, DateTime startDate, DateTime endDate, int plantId)
         {
-            ADBC.NewBatch(phase, start_date, end_date, plantId);
+            ADBC.NewBatch(phase, startDate, endDate, plantId);
         }
         public List<Picture> GetAllPicturesFromDayId(int dayId)
         {

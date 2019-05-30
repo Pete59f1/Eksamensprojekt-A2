@@ -17,7 +17,6 @@ namespace GruppeA2.Application
             {
                 try
                 {
-                    //Create new batch
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand("sp_NewBatch", con);
@@ -27,9 +26,6 @@ namespace GruppeA2.Application
                     cmd.Parameters.Add(new SqlParameter("@endDate", endDate));
                     cmd.Parameters.Add(new SqlParameter("@plantId", plantId));
                     cmd.ExecuteNonQuery();
-
-
-                    //Get the new batch's number
                     
                     int batchNr = 0;
 
@@ -47,9 +43,7 @@ namespace GruppeA2.Application
                         }
                     }
                     read.Close();
-
-
-                    //Create the number of days
+                    
                     int days = ((TimeSpan)(endDate - startDate)).Days + 1;
 
                     
@@ -70,7 +64,5 @@ namespace GruppeA2.Application
                 }
             }
         }
-       
-        
     }
 }

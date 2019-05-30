@@ -42,7 +42,7 @@
                     <ComboBoxItem>Død</ComboBoxItem>
                 </ComboBox>
                 <Button Grid.Row="2" x:Name="btn_SavePicture" Content="Gem Billede" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100" Height="23" Margin="75,10,75,37" Click="Save_Click"/>
-                <Button Name="btn_ViewPicture" Content="Se billede" HorizontalAlignment="Left" Margin="75,38,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Click="Btn_ViewPicture_Click"/>
+                <Button Name="btn_ViewPicture" Content="Se billede" HorizontalAlignment="Left" Margin="75,38,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Click="ViewPicture_Click"/>
             </Grid>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>

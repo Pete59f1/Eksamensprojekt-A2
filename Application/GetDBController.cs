@@ -49,10 +49,6 @@ namespace GruppeA2.Application
                     throw new Exception(ex.Message);
                 }
             }
-
-            //Lavet test data for at arbejde videre
-
-
         }
 
         public NewPicturesRepo GetPicturesWithNoCommentAndStatus()

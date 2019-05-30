@@ -102,7 +102,7 @@ namespace GUI
             this.Close();
         }
 
-        private void Btn_ViewPicture_Click(object sender, RoutedEventArgs e)
+        private void ViewPicture_Click(object sender, RoutedEventArgs e)
         {
             ViewPicture viewPicture = new ViewPicture(this, CheckedRadioButton.Content, CheckedIndex);
             this.Visibility = Visibility.Hidden;
@@ -115,23 +115,19 @@ namespace GUI
             string status = cb_Growth.Text;
             int pictureId = CheckedIndex;
             
-            controller.save_picture(comment, status, pictureId);
+            controller.SavePicture(comment, status, pictureId);
             WP_mainWrapPanel.Children.Clear();
             LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
 
-            //WP_mainWrapPanel.Children.Clear();
-            //LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus()); Giver problemer når man gemmer fra findpicture
         }
 
         private void DeletePicture_Click(object sender, RoutedEventArgs e)
         {
             int pictureId = CheckedIndex;
-            controller.delete_picture(pictureId);
+            controller.DeletePicture(pictureId);
             WP_mainWrapPanel.Children.Clear();
             LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus());
         }
-
-            //LoadNewPicturesRepo(controller.GetPicturesWithNoCommentAndStatus()); Giver problemer når man gemmer fra findpicture
         
 
     }

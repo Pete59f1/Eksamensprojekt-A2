@@ -16,12 +16,12 @@ namespace GruppeA2.Application
         public DateTime GetStartDateByIndex(int index) => RepoCollection[index].StartDate;
         public DateTime GetEndDateByIndex(int index) => RepoCollection[index].EndDate;
         public int GetPlantIdByIndex(int index) => RepoCollection[index].PlantId;
-        public List<int> GetDayNrByBatchId(int batchId)
+        public List<int> GetDayNrByBatchNr(int batchNr)
         {
             List<int> days = new List<int>();
             foreach (Batch batch in RepoCollection)
             {
-                if (batch.BatchNr.Equals(batchId))
+                if (batch.BatchNr.Equals(batchNr))
                 {
                     foreach (Day day in batch.DaysInProduction)
                     {
@@ -32,11 +32,11 @@ namespace GruppeA2.Application
             return days;
         }
 
-        public void DeleteAllDaysButChosen(int batchId, int dayNr)
+        public void DeleteAllDaysButChosen(int batchNr, int dayNr)
         {
             foreach (Batch batch in RepoCollection)
             {
-                if (batch.BatchNr.Equals(batchId))
+                if (batch.BatchNr.Equals(batchNr))
                 {
                     for(int i = 0; i < batch.DaysInProduction.Count; i++)
                     {
